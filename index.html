@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club de Finanzas UACh Puerto Montt</title>
+<meta name="description" content="Comunidad estudiantil de finanzas de la Universidad Austral de Chile, sede Puerto Montt. Publicaciones, investigaciones y actividades.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png">
+<style>
+
+  /* ============================================================
+     DATOS DEL SITIO — edita aquí nombres, textos e info de contacto
+     ============================================================ */
+
+  :root{
+    --navy:#0B2545;
+    --blue:#1D4E89;
+    --ice:#A9D6E5;
+    --paper:#F5F7FA;
+    --paper-2:#EBEFF4;
+    --ink:#10233B;
+    --ink-soft:#4A5A72;
+    --gold:#B8862F;
+    --line:#D7DEE7;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.55;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  section{padding:88px 0;}
+  @media(max-width:640px){ section{padding:56px 0;} }
+
+  h1,h2,h3{font-family:var(--serif); font-weight:500; color:var(--navy); letter-spacing:-0.01em;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,247,250,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .brand{display:flex; align-items:center; gap:12px; font-family:var(--serif); font-size:1.15rem; color:var(--navy);}
+  .brand img{height:44px; width:auto;}
+  .navlinks{display:flex; gap:32px; font-size:0.95rem;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
+  .navlinks a:hover{color:var(--navy);}
+  .navtoggle{display:none; background:none; border:none; font-size:1.6rem; color:var(--navy); cursor:pointer;}
+  @media(max-width:760px){
+    .navlinks{
+      position:absolute; top:76px; left:0; right:0; background:var(--paper);
+      flex-direction:column; gap:0; border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    .navlinks.open{max-height:320px;}
+    .navlinks a{padding:16px 28px; border-top:1px solid var(--line);}
+    .navtoggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:96px 0 64px;}
+  .hero .eyebrow{
+    color:var(--blue); font-size:0.95rem; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.5vw, 4rem);
+    line-height:1.05;
+    max-width:15ch;
+  }
+  .hero p.lead{
+    margin-top:24px; max-width:52ch; font-size:1.15rem; color:var(--ink-soft);
+  }
+  .hero .cta-row{margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 26px; border-radius:2px;
+    font-size:0.95rem; text-decoration:none; font-weight:500;
+    border:1px solid transparent; transition:opacity .15s;
+  }
+  .btn:hover{opacity:0.85;}
+  .btn-primary{background:var(--navy); color:#fff;}
+  .btn-ghost{border-color:var(--navy); color:var(--navy);}
+
+  .stats{
+    margin-top:72px; padding-top:40px; border-top:1px solid var(--line);
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .stat .num{font-family:var(--serif); font-size:2.4rem; color:var(--navy);}
+  .stat .label{color:var(--ink-soft); font-size:0.92rem; margin-top:4px;}
+  @media(max-width:640px){ .stats{grid-template-columns:1fr 1fr;} }
+
+  /* ---------- Section heading pattern ---------- */
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:24px; margin-bottom:44px; border-bottom:1px solid var(--line); padding-bottom:20px;
+  }
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
+  .section-head .note{color:var(--ink-soft); font-size:0.92rem; max-width:32ch; text-align:right;}
+  @media(max-width:640px){ .section-head{flex-direction:column;} .section-head .note{text-align:left;} }
+
+  /* ---------- Nosotros ---------- */
+  .nosotros{background:var(--paper-2);}
+  .nosotros .grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .nosotros p{color:var(--ink-soft); margin-bottom:16px;}
+  .nosotros .pillars{display:flex; flex-direction:column; gap:20px;}
+  .pillar{border-left:2px solid var(--blue); padding-left:18px;}
+  .pillar h3{font-size:1.05rem; margin-bottom:4px;}
+  .pillar p{color:var(--ink-soft); font-size:0.95rem; margin:0;}
+  @media(max-width:760px){ .nosotros .grid{grid-template-columns:1fr;} }
+
+  /* ---------- Publicaciones ---------- */
+  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;}
+  .filter-btn{
+    font-family:var(--sans); font-size:0.85rem; padding:7px 16px;
+    border:1px solid var(--line); background:#fff; color:var(--ink-soft);
+    border-radius:999px; cursor:pointer; transition:all .15s;
+  }
+  .filter-btn.active{background:var(--navy); border-color:var(--navy); color:#fff;}
+
+  .pub-list{display:flex; flex-direction:column;}
+  .pub{
+    display:grid; grid-template-columns:130px 1fr; gap:28px;
+    padding:28px 0; border-top:1px solid var(--line);
+  }
+  .pub:last-child{border-bottom:1px solid var(--line);}
+  .pub .meta{color:var(--ink-soft); font-size:0.85rem;}
+  .pub .meta .tag{
+    display:inline-block; color:var(--blue); font-weight:600; margin-bottom:6px;
+  }
+  .pub h3{font-size:1.25rem; margin-bottom:8px;}
+  .pub p{color:var(--ink-soft); font-size:0.97rem; max-width:62ch;}
+  @media(max-width:640px){ .pub{grid-template-columns:1fr; gap:8px;} }
+
+  /* ---------- Actividades ---------- */
+  .timeline{border-left:2px solid var(--line); margin-left:6px;}
+  .tl-item{position:relative; padding:0 0 40px 32px;}
+  .tl-item::before{
+    content:''; position:absolute; left:-7px; top:4px;
+    width:12px; height:12px; border-radius:50%; background:var(--navy); border:2px solid var(--paper);
+  }
+  .tl-item .date{color:var(--blue); font-size:0.85rem; font-weight:600; margin-bottom:6px;}
+  .tl-item h3{font-size:1.1rem; margin-bottom:6px;}
+  .tl-item p{color:var(--ink-soft); font-size:0.95rem; max-width:60ch;}
+
+  /* ---------- Integrantes ---------- */
+  .directiva{background:var(--paper-2);}
+  .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
+  @media(max-width:760px){ .team-grid{grid-template-columns:1fr 1fr;} }
+  @media(max-width:480px){ .team-grid{grid-template-columns:1fr;} }
+  .member .photo{
+    width:100%; aspect-ratio:1; border-radius:2px; background:var(--navy);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ice); font-family:var(--serif); font-size:2rem; margin-bottom:14px;
+  }
+  .member h3{font-size:1.05rem; margin-bottom:2px;}
+  .member .role{color:var(--blue); font-size:0.88rem;}
+
+  /* ---------- Contacto / footer ---------- */
+  footer{background:var(--navy); color:#EAF0F6; padding:64px 0 32px;}
+  footer h2{color:#fff;}
+  .foot-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:40px; margin-top:36px;}
+  @media(max-width:700px){ .foot-grid{grid-template-columns:1fr;} }
+  footer p{color:#B9C6D6; font-size:0.95rem;}
+  footer h4{font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:#7E93AC; margin-bottom:14px; font-weight:600;}
+  footer .foot-link{display:block; color:#EAF0F6; text-decoration:none; margin-bottom:10px; font-size:0.95rem;}
+  footer .foot-link:hover{color:var(--ice);}
+  .foot-bottom{
+    margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12);
+    font-size:0.82rem; color:#7E93AC; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <img src="logo.png" alt="Logo Club de Finanzas UACh">
+      Club de Finanzas UACh · Puerto Montt
+    </div>
+    <button class="navtoggle" id="navtoggle" aria-label="Abrir menú">&#9776;</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#actividades">Actividades</a>
+      <a href="#integrantes">Integrantes</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Universidad Austral de Chile — Sede Puerto Montt · Fundado el 4 de septiembre de 2026</div>
+      <h1>Formando criterio financiero desde el sur de Chile</h1>
+      <p class="lead">Somos la comunidad de estudiantes de Ingeniería Comercial y carreras afines interesados en mercados, inversión y gestión. Publicamos análisis, organizamos actividades y conectamos con la industria.</p>
+      <div class="cta-row">
+        <a href="#publicaciones" class="btn btn-primary">Ver publicaciones</a>
+        <a href="#contacto" class="btn btn-ghost">Sumarme al club</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num" data-stat="miembros">—</div>
+          <div class="label">Miembros activos</div>
+        </div>
+        <div class="stat">
+          <div class="num" data-stat="actividades">—</div>
+          <div class="label">Actividades realizadas</div>
+        </div>
+        <div class="stat">
+          <div class="num" data-stat="fundacion">—</div>
+          <div class="label">Año de fundación</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NOSOTROS ================= -->
+  <section class="nosotros" id="nosotros">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Nosotros</h2>
+      </div>
+      <div class="grid">
+        <div>
+          <p>El Club de Finanzas UACh Puerto Montt nace del interés de un grupo de estudiantes por profundizar en temas que van más allá de la sala de clases: mercados financieros, análisis de inversión, economía regional y gestión estratégica.</p>
+          <p>Creemos que la formación académica se complementa con espacios de discusión, investigación propia y contacto directo con profesionales de la industria.</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <h3>Investigación</h3>
+            <p>Publicamos notas y análisis propios sobre mercados, empresas y coyuntura económica.</p>
+          </div>
+          <div class="pillar">
+            <h3>Comunidad</h3>
+            <p>Espacios de debate y aprendizaje entre estudiantes de distintos niveles.</p>
+          </div>
+          <div class="pillar">
+            <h3>Vínculo con la industria</h3>
+            <p>Charlas, visitas y contacto con profesionales del área financiera.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PUBLICACIONES ================= -->
+  <section id="publicaciones">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Publicaciones</h2>
+        <div class="note">Notas, investigaciones y resúmenes semanales escritos por el club.</div>
+      </div>
+
+      <div class="filters" id="filters"></div>
+      <div class="pub-list" id="pubList"></div>
+    </div>
+  </section>
+
+  <!-- ================= ACTIVIDADES ================= -->
+  <section class="nosotros" id="actividades">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Actividades</h2>
+        <div class="note">Charlas, visitas y eventos que hemos realizado.</div>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ================= INTEGRANTES ================= -->
+  <section class="directiva" id="integrantes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Directiva</h2>
+      </div>
+      <div class="team-grid" id="teamGrid"></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= CONTACTO / FOOTER ================= -->
+<footer id="contacto">
+  <div class="wrap">
+    <h2>Conversemos</h2>
+    <div class="foot-grid">
+      <div>
+        <p>¿Te interesa el mundo financiero? Súmate al club, propón una nota o invítanos a colaborar.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a class="foot-link" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
+        <a class="foot-link" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
+        <a class="foot-link" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div>
+        <h4>Sede</h4>
+        <p>Universidad Austral de Chile<br>Campus Puerto Montt</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Club de Finanzas UACh Puerto Montt</span>
+      <span>Sitio hecho por y para el club</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONTENIDO DEL SITIO
+   Edita SOLO esta sección para actualizar el sitio: no necesitas
+   tocar el HTML/CSS de arriba. Guarda el archivo y listo.
+   ============================================================ */
+
+const CLUB = {
+  miembros: 10,
+  actividadesRealizadas: 1,
+  anioFundacion: 2026
+};
+
+// Cada publicación: { fecha (YYYY-MM-DD), categoria, titulo, resumen }
+const PUBLICACIONES = [
+  {
+    fecha: "2026-08-20",
+    categoria: "Mercados",
+    titulo: "Título de ejemplo: cómo leer una curva de tasas",
+    resumen: "Reemplaza este texto por el resumen de la publicación. Dos o tres líneas bastan; el contenido completo puede vincularse a un PDF o documento externo si lo prefieren."
+  },
+  {
+    fecha: "2026-08-13",
+    categoria: "Investigación club",
+    titulo: "Título de ejemplo: análisis de una empresa chilena",
+    resumen: "Reemplaza este texto por el resumen de la publicación."
+  }
+];
+
+// Cada actividad: { fecha, titulo, descripcion }
+const ACTIVIDADES = [
+  {
+    fecha: "4 de septiembre de 2026",
+    titulo: "Fundación del club y lanzamiento oficial del sitio web",
+    descripcion: "Primera actividad del Club de Finanzas UACh Puerto Montt: presentación del club al público y estreno de esta página web."
+  }
+];
+
+// Cada integrante: { nombre, cargo }
+const DIRECTIVA = [
+  { nombre: "Nombre Apellido", cargo: "Presidencia" },
+  { nombre: "Nombre Apellido", cargo: "Vicepresidencia" },
+  { nombre: "Nombre Apellido", cargo: "Tesorería" }
+];
+
+/* ============================================================
+   No es necesario editar debajo de esta línea
+   ============================================================ */
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelector('[data-stat="miembros"]').textContent = CLUB.miembros + "+";
+document.querySelector('[data-stat="actividades"]').textContent = CLUB.actividadesRealizadas + "+";
+document.querySelector('[data-stat="fundacion"]').textContent = CLUB.anioFundacion;
+
+function fmtFecha(iso){
+  try{
+    const d = new Date(iso + "T00:00:00");
+    return d.toLocaleDateString('es-CL', { day:'numeric', month:'short', year:'numeric' });
+  }catch(e){ return iso; }
+}
+
+// Publicaciones + filtros
+const pubList = document.getElementById('pubList');
+const filtersEl = document.getElementById('filters');
+const categorias = ["Todas", ...new Set(PUBLICACIONES.map(p => p.categoria))];
+
+function renderPubs(filtro){
+  pubList.innerHTML = "";
+  const items = [...PUBLICACIONES]
+    .sort((a,b) => new Date(b.fecha) - new Date(a.fecha))
+    .filter(p => filtro === "Todas" || p.categoria === filtro);
+
+  if(items.length === 0){
+    pubList.innerHTML = '<p style="color:var(--ink-soft); padding:24px 0;">Aún no hay publicaciones en esta categoría.</p>';
+    return;
+  }
+
+  items.forEach(p => {
+    const el = document.createElement('div');
+    el.className = 'pub';
+    el.innerHTML = `
+      <div class="meta">${fmtFecha(p.fecha)}</div>
+      <div>
+        <span class="meta tag">${p.categoria}</span>
+        <h3>${p.titulo}</h3>
+        <p>${p.resumen}</p>
+      </div>`;
+    pubList.appendChild(el);
+  });
+}
+
+categorias.forEach(cat => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn' + (cat === "Todas" ? " active" : "");
+  btn.textContent = cat;
+  btn.onclick = () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderPubs(cat);
+  };
+  filtersEl.appendChild(btn);
+});
+renderPubs("Todas");
+
+// Actividades
+const timeline = document.getElementById('timeline');
+ACTIVIDADES.forEach(a => {
+  const el = document.createElement('div');
+  el.className = 'tl-item';
+  el.innerHTML = `
+    <div class="date">${a.fecha}</div>
+    <h3>${a.titulo}</h3>
+    <p>${a.descripcion}</p>`;
+  timeline.appendChild(el);
+});
+
+// Directiva
+const teamGrid = document.getElementById('teamGrid');
+DIRECTIVA.forEach(m => {
+  const initials = m.nombre.split(" ").map(w => w[0]).slice(0,2).join("");
+  const el = document.createElement('div');
+  el.className = 'member';
+  el.innerHTML = `
+    <div class="photo">${initials}</div>
+    <h3>${m.nombre}</h3>
+    <div class="role">${m.cargo}</div>`;
+  teamGrid.appendChild(el);
+});
+
+// Menú móvil
+document.getElementById('navtoggle').addEventListener('click', () => {
+  document.getElementById('navlinks').classList.toggle('open');
+});
+document.querySelectorAll('.navlinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navlinks').classList.remove('open'));
+});
+</script>
+
+</body>
+</html>
