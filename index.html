@@ -60,7 +60,7 @@ Index · HTML
     height:76px;
   }
   .brand{display:flex; align-items:center; gap:12px; font-family:var(--serif); font-size:1.15rem; color:var(--navy);}
-  .brand img{height:44px; width:auto;}
+  .brand img{height:48px; width:auto;}
   .navlinks{display:flex; gap:32px; font-size:0.95rem;}
   .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
   .navlinks a:hover{color:var(--navy);}
@@ -176,8 +176,9 @@ Index · HTML
   /* ---------- Contacto / footer ---------- */
   footer{background:var(--navy); color:#EAF0F6; padding:64px 0 32px;}
   footer h2{color:#fff;}
-  .foot-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:40px; margin-top:36px;}
-  @media(max-width:700px){ .foot-grid{grid-template-columns:1fr;} }
+  .foot-grid{display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; gap:40px; margin-top:36px;}
+  @media(max-width:900px){ .foot-grid{grid-template-columns:1fr 1fr;} }
+  @media(max-width:520px){ .foot-grid{grid-template-columns:1fr;} }
   footer p{color:#B9C6D6; font-size:0.95rem;}
   footer h4{font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:#7E93AC; margin-bottom:14px; font-weight:600;}
   footer .foot-link{display:block; color:#EAF0F6; text-decoration:none; margin-bottom:10px; font-size:0.95rem;}
@@ -320,6 +321,10 @@ Index · HTML
       <div>
         <h4>Sede</h4>
         <p>Universidad Austral de Chile<br>Campus Puerto Montt</p>
+      </div>
+      <div>
+        <h4>Documentos</h4>
+        <a class="foot-link" href="estatutos.pdf" target="_blank" rel="noopener">Estatutos del Club (PDF)</a>
       </div>
     </div>
     <div class="foot-bottom">
