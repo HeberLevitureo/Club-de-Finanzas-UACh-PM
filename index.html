@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,11 +13,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="logo.png">
 <style>
-
+ 
   /* ============================================================
      DATOS DEL SITIO — edita aquí nombres, textos e info de contacto
      ============================================================ */
-
+ 
   :root{
     --navy:#0B2545;
     --blue:#1D4E89;
@@ -28,7 +31,7 @@
     --serif: 'Fraunces', Georgia, serif;
     --sans: 'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
   }
-
+ 
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
@@ -42,9 +45,9 @@
   .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
   section{padding:88px 0;}
   @media(max-width:640px){ section{padding:56px 0;} }
-
+ 
   h1,h2,h3{font-family:var(--serif); font-weight:500; color:var(--navy); letter-spacing:-0.01em;}
-
+ 
   /* ---------- Nav ---------- */
   header{
     position:sticky; top:0; z-index:50;
@@ -72,7 +75,7 @@
     .navlinks a{padding:16px 28px; border-top:1px solid var(--line);}
     .navtoggle{display:block;}
   }
-
+ 
   /* ---------- Hero ---------- */
   .hero{padding:96px 0 64px;}
   .hero .eyebrow{
@@ -95,7 +98,7 @@
   .btn:hover{opacity:0.85;}
   .btn-primary{background:var(--navy); color:#fff;}
   .btn-ghost{border-color:var(--navy); color:var(--navy);}
-
+ 
   .stats{
     margin-top:72px; padding-top:40px; border-top:1px solid var(--line);
     display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
@@ -103,7 +106,7 @@
   .stat .num{font-family:var(--serif); font-size:2.4rem; color:var(--navy);}
   .stat .label{color:var(--ink-soft); font-size:0.92rem; margin-top:4px;}
   @media(max-width:640px){ .stats{grid-template-columns:1fr 1fr;} }
-
+ 
   /* ---------- Section heading pattern ---------- */
   .section-head{
     display:flex; align-items:baseline; justify-content:space-between;
@@ -112,7 +115,7 @@
   .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
   .section-head .note{color:var(--ink-soft); font-size:0.92rem; max-width:32ch; text-align:right;}
   @media(max-width:640px){ .section-head{flex-direction:column;} .section-head .note{text-align:left;} }
-
+ 
   /* ---------- Nosotros ---------- */
   .nosotros{background:var(--paper-2);}
   .nosotros .grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
@@ -122,7 +125,7 @@
   .pillar h3{font-size:1.05rem; margin-bottom:4px;}
   .pillar p{color:var(--ink-soft); font-size:0.95rem; margin:0;}
   @media(max-width:760px){ .nosotros .grid{grid-template-columns:1fr;} }
-
+ 
   /* ---------- Publicaciones ---------- */
   .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;}
   .filter-btn{
@@ -131,7 +134,7 @@
     border-radius:999px; cursor:pointer; transition:all .15s;
   }
   .filter-btn.active{background:var(--navy); border-color:var(--navy); color:#fff;}
-
+ 
   .pub-list{display:flex; flex-direction:column;}
   .pub{
     display:grid; grid-template-columns:130px 1fr; gap:28px;
@@ -145,7 +148,7 @@
   .pub h3{font-size:1.25rem; margin-bottom:8px;}
   .pub p{color:var(--ink-soft); font-size:0.97rem; max-width:62ch;}
   @media(max-width:640px){ .pub{grid-template-columns:1fr; gap:8px;} }
-
+ 
   /* ---------- Actividades ---------- */
   .timeline{border-left:2px solid var(--line); margin-left:6px;}
   .tl-item{position:relative; padding:0 0 40px 32px;}
@@ -156,7 +159,7 @@
   .tl-item .date{color:var(--blue); font-size:0.85rem; font-weight:600; margin-bottom:6px;}
   .tl-item h3{font-size:1.1rem; margin-bottom:6px;}
   .tl-item p{color:var(--ink-soft); font-size:0.95rem; max-width:60ch;}
-
+ 
   /* ---------- Integrantes ---------- */
   .directiva{background:var(--paper-2);}
   .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
@@ -169,7 +172,7 @@
   }
   .member h3{font-size:1.05rem; margin-bottom:2px;}
   .member .role{color:var(--blue); font-size:0.88rem;}
-
+ 
   /* ---------- Contacto / footer ---------- */
   footer{background:var(--navy); color:#EAF0F6; padding:64px 0 32px;}
   footer h2{color:#fff;}
@@ -184,11 +187,11 @@
     margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12);
     font-size:0.82rem; color:#7E93AC; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
   }
-
+ 
 </style>
 </head>
 <body>
-
+ 
 <header>
   <nav class="wrap">
     <div class="brand">
@@ -205,9 +208,9 @@
     </div>
   </nav>
 </header>
-
+ 
 <main>
-
+ 
   <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="wrap">
@@ -218,7 +221,7 @@
         <a href="#publicaciones" class="btn btn-primary">Ver publicaciones</a>
         <a href="#contacto" class="btn btn-ghost">Sumarme al club</a>
       </div>
-
+ 
       <div class="stats">
         <div class="stat">
           <div class="num" data-stat="miembros">—</div>
@@ -235,7 +238,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ================= NOSOTROS ================= -->
   <section class="nosotros" id="nosotros">
     <div class="wrap">
@@ -264,7 +267,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- ================= PUBLICACIONES ================= -->
   <section id="publicaciones">
     <div class="wrap">
@@ -272,12 +275,12 @@
         <h2>Publicaciones</h2>
         <div class="note">Notas, investigaciones y resúmenes semanales escritos por el club.</div>
       </div>
-
+ 
       <div class="filters" id="filters"></div>
       <div class="pub-list" id="pubList"></div>
     </div>
   </section>
-
+ 
   <!-- ================= ACTIVIDADES ================= -->
   <section class="nosotros" id="actividades">
     <div class="wrap">
@@ -288,7 +291,7 @@
       <div class="timeline" id="timeline"></div>
     </div>
   </section>
-
+ 
   <!-- ================= INTEGRANTES ================= -->
   <section class="directiva" id="integrantes">
     <div class="wrap">
@@ -298,9 +301,9 @@
       <div class="team-grid" id="teamGrid"></div>
     </div>
   </section>
-
+ 
 </main>
-
+ 
 <!-- ================= CONTACTO / FOOTER ================= -->
 <footer id="contacto">
   <div class="wrap">
@@ -330,24 +333,24 @@
     </div>
   </div>
 </footer>
-
+ 
 <script>
 /* ============================================================
    CONTENIDO DEL SITIO
    Edita SOLO esta sección para actualizar el sitio: no necesitas
    tocar el HTML/CSS de arriba. Guarda el archivo y listo.
    ============================================================ */
-
+ 
 const CLUB = {
   miembros: 10,
   actividadesRealizadas: 1,
   anioFundacion: 2026
 };
-
+ 
 // Cada publicación: { fecha (YYYY-MM-DD), categoria, titulo, resumen }
 // Por ahora está vacío — se muestra "Próximamente" hasta que agreguen la primera.
 const PUBLICACIONES = [];
-
+ 
 // Cada actividad: { fecha, titulo, descripcion }
 const ACTIVIDADES = [
   {
@@ -356,47 +359,47 @@ const ACTIVIDADES = [
     descripcion: "Primera actividad del Club de Finanzas UACh Puerto Montt: presentación del club al público y estreno de esta página web."
   }
 ];
-
+ 
 // Cada integrante: { nombre, cargo }
 const DIRECTIVA = [
   { nombre: "Nombre Apellido", cargo: "Presidencia" },
   { nombre: "Nombre Apellido", cargo: "Vicepresidencia" },
   { nombre: "Nombre Apellido", cargo: "Tesorería" }
 ];
-
+ 
 /* ============================================================
    No es necesario editar debajo de esta línea
    ============================================================ */
-
+ 
 document.getElementById('year').textContent = new Date().getFullYear();
-
+ 
 document.querySelector('[data-stat="miembros"]').textContent = CLUB.miembros + "+";
 document.querySelector('[data-stat="actividades"]').textContent = CLUB.actividadesRealizadas + "+";
 document.querySelector('[data-stat="fundacion"]').textContent = CLUB.anioFundacion;
-
+ 
 function fmtFecha(iso){
   try{
     const d = new Date(iso + "T00:00:00");
     return d.toLocaleDateString('es-CL', { day:'numeric', month:'short', year:'numeric' });
   }catch(e){ return iso; }
 }
-
+ 
 // Publicaciones + filtros
 const pubList = document.getElementById('pubList');
 const filtersEl = document.getElementById('filters');
 const categorias = ["Todas", ...new Set(PUBLICACIONES.map(p => p.categoria))];
-
+ 
 function renderPubs(filtro){
   pubList.innerHTML = "";
   const items = [...PUBLICACIONES]
     .sort((a,b) => new Date(b.fecha) - new Date(a.fecha))
     .filter(p => filtro === "Todas" || p.categoria === filtro);
-
+ 
   if(items.length === 0){
     pubList.innerHTML = '<p style="color:var(--ink-soft); padding:24px 0; font-family:var(--serif); font-size:1.3rem;">Próximamente</p>';
     return;
   }
-
+ 
   items.forEach(p => {
     const el = document.createElement('div');
     el.className = 'pub';
@@ -410,7 +413,7 @@ function renderPubs(filtro){
     pubList.appendChild(el);
   });
 }
-
+ 
 categorias.forEach(cat => {
   const btn = document.createElement('button');
   btn.className = 'filter-btn' + (cat === "Todas" ? " active" : "");
@@ -424,7 +427,7 @@ categorias.forEach(cat => {
 });
 if(PUBLICACIONES.length === 0){ filtersEl.style.display = 'none'; }
 renderPubs("Todas");
-
+ 
 // Actividades
 const timeline = document.getElementById('timeline');
 ACTIVIDADES.forEach(a => {
@@ -436,7 +439,7 @@ ACTIVIDADES.forEach(a => {
     <p>${a.descripcion}</p>`;
   timeline.appendChild(el);
 });
-
+ 
 // Directiva
 const teamGrid = document.getElementById('teamGrid');
 DIRECTIVA.forEach(m => {
@@ -449,7 +452,7 @@ DIRECTIVA.forEach(m => {
     <div class="role">${m.cargo}</div>`;
   teamGrid.appendChild(el);
 });
-
+ 
 // Menú móvil
 document.getElementById('navtoggle').addEventListener('click', () => {
   document.getElementById('navlinks').classList.toggle('open');
@@ -458,6 +461,7 @@ document.querySelectorAll('.navlinks a').forEach(a => {
   a.addEventListener('click', () => document.getElementById('navlinks').classList.remove('open'));
 });
 </script>
-
+ 
 </body>
 </html>
+ 
