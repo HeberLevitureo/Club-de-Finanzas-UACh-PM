@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://club-de-finanzas-uach-pm.clubfinanzasuach.workers.dev/sitemap.xml
