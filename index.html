@@ -151,8 +151,14 @@ Index · HTML
   .reveal.is-visible{opacity:1; transform:translateY(0);}
  
   /* ---------- Imágenes dentro de una publicación ---------- */
-  .pub-images{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
-  .pub-images img{width:140px; height:100px; object-fit:cover; border-radius:2px;}
+  .pub-cover{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:2px; margin:16px 0 18px;}
+  .pub-body p{color:var(--ink-soft); font-size:0.97rem; max-width:62ch; margin-bottom:14px;}
+  .pub-body ul{color:var(--ink-soft); font-size:0.97rem; max-width:62ch; margin:0 0 14px 20px;}
+  .pub-body li{margin-bottom:4px;}
+  .pub-body strong{color:var(--navy);}
+  .pub-images{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;}
+  .pub-images img{width:100%; height:170px; object-fit:cover; border-radius:2px;}
+  @media(max-width:480px){ .pub-images{grid-template-columns:1fr;} }
  
   /* ---------- Section heading pattern ---------- */
   .section-head{
@@ -403,19 +409,40 @@ const CLUB = {
   anioFundacion: 2026
 };
  
-// Cada publicación: { fecha (YYYY-MM-DD), categoria, titulo, resumen, imagenes (opcional) }
-// La de abajo es el espacio dejado para esta noche: reemplaza SOLO el texto de
-// "titulo" y "resumen", y agrega los nombres de las fotos en "imagenes" (deben
-// estar subidas en la misma carpeta que index.html, ej: "actividad1.jpg").
+// Cada publicación: { fecha, categoria, titulo, portada (opcional), resumen (HTML), imagenes (opcional) }
+// "portada" es la foto grande que va debajo del título. "imagenes" son las fotos
+// que se muestran al final, de a dos por fila. "resumen" admite HTML (párrafos,
+// listas, negritas) para dar formato al texto de la publicación.
 const PUBLICACIONES = [
   {
     fecha: "2026-09-04",
-    categoria: "Actividades del club",
-    titulo: "COMPLETAR ESTA NOCHE: título de la publicación sobre la actividad de hoy",
-    resumen: "ESCRIBE AQUÍ el texto: qué se hizo en la actividad de fundación y lanzamiento, quiénes participaron, cómo estuvo la convocatoria, próximos pasos del club.",
+    categoria: "Comunicado",
+    titulo: "Constitución oficial del Club de Finanzas UACh: un nuevo espacio para el desarrollo económico y estudiantil en la Región de Los Lagos",
+    portada: "actividad-portada.jpg",
+    resumen: `
+      <p><em>La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.</em></p>
+      <p>El pasado viernes 4 de septiembre de 2026 se llevó a cabo la sesión inaugural que dio inicio oficial a las actividades del Club de Finanzas de la Universidad Austral de Chile. La jornada, que contó con una asistencia inicial de 12 estudiantes comprometidos con el área económica y financiera, sirvió como primera mesa de trabajo para delinear el futuro de esta nueva organización académica.</p>
+      <p>Durante este primer encuentro se establecieron los acuerdos fundamentales, los protocolos de acción y el plan de trabajo estratégico que guiará el crecimiento y la formación continua del club. Asimismo, se fijaron los estatutos operativos, los cuales sentarán las bases para el funcionamiento transparente y estructurado de la agrupación.</p>
+      <p>Para liderar esta etapa fundacional y ejecutar los objetivos trazados, se designó a la directiva oficial, compuesta íntegramente por estudiantes de tercer año de la carrera de Ingeniería Comercial:</p>
+      <ul>
+        <li>Presidente: Enzo Solano</li>
+        <li>Vicepresidente: Martín Márquez</li>
+        <li>Director de Secretaría: Alonso Letelier</li>
+        <li>Director de Comunicación: Heber Levitureo</li>
+        <li>Director de Vinculación: Diego Vargas</li>
+      </ul>
+      <p><strong>Visión y compromiso con el entorno empresarial</strong></p>
+      <p>El Club de Finanzas UACh nace de la necesidad de materializar las inquietudes académicas de un grupo de estudiantes orientados a generar un impacto positivo y cuantificable en la comunidad universitaria y su entorno. El plan de acción contempla la organización de conversatorios, charlas magistrales, investigaciones aplicadas y visitas a empresas, buscando crear un puente directo entre el talento universitario y el mundo corporativo.</p>
+      <p>Como organización, sostenemos la firme convicción de que esta iniciativa generará un valor real que trascenderá las aulas. Nuestra visión a largo plazo es consolidarnos como líderes y referentes en la Región de Los Lagos dentro del área financiera y económica, contribuyendo activamente al desarrollo de las aptitudes técnicas, analíticas y de liderazgo de los futuros profesionales del sur de Chile.</p>
+      <p>Invitamos a la comunidad estudiantil, docentes y empresas del sector a seguir de cerca nuestras futuras iniciativas.</p>
+    `,
     imagenes: [
-      // "actividad1.jpg",
-      // "actividad2.jpg"
+      "actividad-1.jpg",
+      "actividad-2.jpg",
+      "actividad-3.jpg",
+      "actividad-4.jpg",
+      "actividad-5.jpg",
+      "actividad-6.jpg"
     ]
   }
 ];
@@ -431,11 +458,11 @@ const ACTIVIDADES = [
  
 // Cada integrante: { nombre, cargo }
 const DIRECTIVA = [
-  { nombre: "Enzo Solano", cargo: "Presidencia" },
-  { nombre: "Martín Márquez", cargo: "Vicepresidencia" },
-  { nombre: "Heber Levitureo", cargo: "Dirección de Comunicación" },
-  { nombre: "Alonso Letelier", cargo: "Dirección de Secretaría" },
-  { nombre: "Diego Vargas", cargo: "Dirección de Vinculación" }
+  { nombre: "Enzo Solano", cargo: "Presidente" },
+  { nombre: "Martín Márquez", cargo: "Vicepresidente" },
+  { nombre: "Heber Levitureo", cargo: "Director de Comunicación" },
+  { nombre: "Alonso Letelier", cargo: "Director de Secretaría" },
+  { nombre: "Diego Vargas", cargo: "Director de Vinculación" }
 ];
  
 /* ============================================================
@@ -496,6 +523,9 @@ function renderPubs(filtro){
     const el = document.createElement('div');
     el.className = 'pub';
     const tieneImagenes = Array.isArray(p.imagenes) && p.imagenes.length > 0;
+    const portadaHtml = p.portada
+      ? `<img class="pub-cover" src="${p.portada}" alt="${p.titulo}">`
+      : '';
     const imagenesHtml = tieneImagenes
       ? `<div class="pub-images">${p.imagenes.map(src => `<img src="${src}" alt="${p.titulo}">`).join('')}</div>`
       : '';
@@ -504,7 +534,8 @@ function renderPubs(filtro){
       <div>
         <span class="meta tag">${p.categoria}</span>
         <h3>${p.titulo}</h3>
-        <p>${p.resumen}</p>
+        ${portadaHtml}
+        <div class="pub-body">${p.resumen}</div>
         ${imagenesHtml}
       </div>`;
     pubList.appendChild(el);
