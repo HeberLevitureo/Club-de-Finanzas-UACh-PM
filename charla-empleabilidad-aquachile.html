@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charla de Empleabilidad AquaChile | Club de Finanzas UACh</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: {
+                950: '#080D19',
+                900: '#0C1424',
+                800: '#121B2E',
+                700: '#1A2740',
+                600: '#243357',
+              },
+              mist: {
+                300: '#B7C3D9',
+                400: '#8FA0BE',
+                500: '#6C7C9C',
+              },
+              amber: {
+                400: '#D2A44C',
+                500: '#C0902E',
+              },
+              teal: {
+                400: '#4FD1C5',
+                500: '#2FB6AA',
+              },
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              mono: ['"IBM Plex Mono"', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #4FD1C5;
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-ink-950 text-slate-300 min-h-screen flex flex-col">
+
+    <!-- ================= NAV (igual al resto del sitio) ================= -->
+    <header class="sticky top-0 z-50 bg-ink-950/85 backdrop-blur border-b border-ink-700">
+      <nav class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 rounded-2xl bg-ink-800 border border-ink-600 flex items-center justify-center p-1.5">
+            <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_100%)]">
+          </div>
+          <span class="text-sm md:text-base font-semibold text-white tracking-tight">Club de Finanzas UACh</span>
+        </div>
+        <button id="navtoggle" class="md:hidden text-white text-2xl leading-none" aria-label="Abrir menú">&#9776;</button>
+        <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm">
+          <a href="index.html#nosotros" class="text-mist-400 hover:text-white transition-colors">Nosotros</a>
+          <a href="index.html#publicaciones" class="text-mist-400 hover:text-white transition-colors">Publicaciones</a>
+          <a href="index.html#actividades" class="text-mist-400 hover:text-white transition-colors">Actividades</a>
+          <a href="index.html#integrantes" class="text-mist-400 hover:text-white transition-colors">Directiva</a>
+          <a href="index.html#contacto" class="text-mist-400 hover:text-white transition-colors">Contacto</a>
+        </div>
+      </nav>
+      <div id="navlinksMobile" class="md:hidden hidden flex-col border-t border-ink-700">
+        <a href="index.html#nosotros" class="px-6 py-3 border-b border-ink-700 text-mist-400">Nosotros</a>
+        <a href="index.html#publicaciones" class="px-6 py-3 border-b border-ink-700 text-mist-400">Publicaciones</a>
+        <a href="index.html#actividades" class="px-6 py-3 border-b border-ink-700 text-mist-400">Actividades</a>
+        <a href="index.html#integrantes" class="px-6 py-3 border-b border-ink-700 text-mist-400">Directiva</a>
+        <a href="index.html#contacto" class="px-6 py-3 text-mist-400">Contacto</a>
+      </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="flex-grow pt-12 pb-24">
+
+        <article class="max-w-4xl mx-auto px-4 sm:px-6">
+
+            <!-- Botón volver -->
+            <a href="index.html"
+                class="inline-flex items-center text-teal-400 hover:text-teal-300 transition-colors text-sm font-medium mb-8">
+
+                <svg class="w-4 h-4 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18">
+                    </path>
+
+                </svg>
+
+                Volver al inicio
+            </a>
+
+            <!-- Encabezado -->
+            <div class="text-center mb-10">
+
+                <div class="flex items-center justify-center gap-3 mb-4 text-sm font-mono text-slate-400">
+                    <span class="bg-teal-900/50 text-teal-300 px-3 py-1 rounded-full border border-teal-800/50">
+                        Charla Profesional
+                    </span>
+                    <span>•</span>
+                    <span>7 de septiembre</span>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
+                    Charla de Empleabilidad AquaChile
+                </h1>
+
+                <p class="text-lg text-slate-400 max-w-3xl mx-auto">
+                    Descubre oportunidades laborales, conoce de cerca la industria salmonera
+                    y recibe recomendaciones prácticas para enfrentar con éxito tus primeros
+                    procesos de selección profesional.
+                </p>
+
+            </div>
+
+            <!-- Imagen del evento -->
+            <div class="mb-12 rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl bg-slate-800">
+                <img src="charlaempleabilidad.jpeg" alt="Afiche Charla de Empleabilidad AquaChile" class="w-full h-full object-contain">
+            </div>
+
+            <!-- Texto -->
+            <div class="max-w-none">
+
+                <p class="text-xl text-slate-300 mb-8 leading-relaxed">
+                    AquaChile invita a estudiantes y futuros profesionales a participar en una
+                    instancia orientada a conocer una de las principales empresas de la industria
+                    salmonera del país y explorar las oportunidades de desarrollo profesional
+                    disponibles dentro del sector.
+                </p>
+
+                <h2 class="text-2xl font-bold text-white mt-10 mb-4 border-b border-slate-700 pb-2">
+                    ¿Qué aprenderás durante la jornada?
+                </h2>
+
+                <div class="space-y-6 my-8">
+
+                    <div class="glass-effect p-6 rounded-xl border-l-4 border-l-teal-500">
+                        <h3 class="text-white font-bold text-lg mb-2">
+                            Conocer la industria salmonera
+                        </h3>
+
+                        <p>
+                            Comprende cómo funciona una de las industrias más relevantes del sur
+                            de Chile y el papel que desempeña AquaChile en el sector.
+                        </p>
+                    </div>
+
+                    <div class="glass-effect p-6 rounded-xl border-l-4 border-l-teal-500">
+                        <h3 class="text-white font-bold text-lg mb-2">
+                            Potenciar tu perfil profesional
+                        </h3>
+
+                        <p>
+                            Aprende estrategias para fortalecer tu currículum, desarrollar
+                            competencias profesionales y destacar en procesos de selección.
+                        </p>
+                    </div>
+
+                    <div class="glass-effect p-6 rounded-xl border-l-4 border-l-teal-500">
+                        <h3 class="text-white font-bold text-lg mb-2">
+                            Consejos para el mundo laboral
+                        </h3>
+
+                        <p>
+                            Recibe recomendaciones prácticas para afrontar entrevistas,
+                            postulaciones y los desafíos de la transición desde la universidad
+                            al entorno profesional.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Información -->
+                <h2 class="text-2xl font-bold text-white mt-10 mb-4">
+                    Información del Evento
+                </h2>
+
+                <div class="glass-effect p-6 rounded-xl mb-8">
+
+                    <ul class="space-y-3">
+
+                        <li>
+                            📅 <strong>Fecha:</strong> Lunes 7 de septiembre
+                        </li>
+
+                        <li>
+                            🕘 <strong>Hora:</strong> 09:50 hrs.
+                        </li>
+
+                        <li>
+                            📍 <strong>Lugar:</strong> Aula Magna 1, UACh Sede Puerto Montt
+                        </li>
+
+                        <li>
+                            🏢 <strong>Empresa Invitada:</strong> AquaChile
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Destacado -->
+                <div class="bg-teal-500/10 border border-teal-500/30 p-8 rounded-2xl text-center">
+
+                    <h3 class="text-teal-300 text-2xl font-bold mb-4">
+                        ¡Prepárate para tu futuro profesional!
+                    </h3>
+
+                    <p class="text-slate-300 mb-6">
+                        Una excelente oportunidad para acercarte al mundo empresarial,
+                        ampliar tu red de contactos y conocer las competencias más valoradas
+                        por la industria.
+                    </p>
+
+                    <a href="https://www.aquachile.com/" target="_blank" rel="noopener noreferrer"
+                        class="inline-block bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold py-3 px-8 rounded-lg transition-all shadow-[0_0_20px_rgba(20,184,166,0.3)] hover:shadow-[0_0_30px_rgba(20,184,166,0.5)]">
+                        Más información sobre AquaChile
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-[#0b1120] py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-slate-500 text-sm">
+                © 2026 Club de Finanzas UACh
+            </span>
+        </div>
+    </footer>
+
+    <script>
+      document.getElementById('navtoggle').addEventListener('click', () => {
+        document.getElementById('navlinksMobile').classList.toggle('hidden');
+        document.getElementById('navlinksMobile').classList.toggle('flex');
+      });
+      document.querySelectorAll('#navlinksMobile a').forEach(a => {
+        a.addEventListener('click', () => {
+          document.getElementById('navlinksMobile').classList.add('hidden');
+          document.getElementById('navlinksMobile').classList.remove('flex');
+        });
+      });
+    </script>
+
+</body>
+
+</html>
