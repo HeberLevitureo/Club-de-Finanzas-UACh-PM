@@ -1,6 +1,3 @@
-
-
-Index · HTML
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,411 +5,280 @@ Index · HTML
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club de Finanzas UACh Puerto Montt</title>
 <meta name="description" content="Comunidad estudiantil de finanzas de la Universidad Austral de Chile, sede Puerto Montt. Publicaciones, investigaciones y actividades.">
+<link rel="icon" href="logo.png">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: {
+            950: '#080D19',
+            900: '#0C1424',
+            800: '#121B2E',
+            700: '#1A2740',
+            600: '#243357',
+          },
+          mist: {
+            300: '#B7C3D9',
+            400: '#8FA0BE',
+            500: '#6C7C9C',
+          },
+          amber: {
+            400: '#D2A44C',
+            500: '#C0902E',
+          },
+          teal: {
+            400: '#4FD1C5',
+            500: '#2FB6AA',
+          },
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <style>
- 
-  /* ============================================================
-     DATOS DEL SITIO — edita aquí nombres, textos e info de contacto
-     ============================================================ */
- 
-  :root{
-    --navy:#0B2545;
-    --blue:#1D4E89;
-    --ice:#A9D6E5;
-    --paper:#F5F7FA;
-    --paper-2:#EBEFF4;
-    --ink:#10233B;
-    --ink-soft:#4A5A72;
-    --gold:#B8862F;
-    --line:#D7DEE7;
-    --serif: 'Fraunces', Georgia, serif;
-    --sans: 'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #080D19; }
+  .font-mono-num { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #080D19; }
+  ::-webkit-scrollbar-thumb { background: #243357; border-radius: 6px; }
+
+  .glass {
+    background: linear-gradient(180deg, rgba(26,39,64,0.55) 0%, rgba(18,27,46,0.55) 100%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(143,160,190,0.14);
   }
- 
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:var(--sans);
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.55;
+
+  .grid-lines {
+    background-image:
+      linear-gradient(rgba(143,160,190,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(143,160,190,0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
   }
-  img{max-width:100%; display:block;}
-  a{color:inherit;}
-  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
-  section{padding:88px 0;}
-  @media(max-width:640px){ section{padding:56px 0;} }
- 
-  h1,h2,h3{font-family:var(--serif); font-weight:500; color:var(--navy); letter-spacing:-0.01em;}
- 
-  /* ---------- Nav ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(245,247,250,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
+
+  .num-plot path {
+    fill: none;
+    stroke: #4FD1C5;
+    stroke-width: 2.5;
+    stroke-dasharray: 900;
+    stroke-dashoffset: 900;
+    animation: draw 2.4s ease-out .3s forwards;
   }
-  nav.wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:76px;
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #4FD1C5;
+    outline-offset: 3px;
   }
-  .brand{display:flex; align-items:center; gap:12px; font-family:var(--serif); font-size:1.15rem; color:var(--navy);}
-  .brand img{height:56px; width:56px; object-fit:contain;}
-  .navlinks{display:flex; gap:32px; font-size:0.95rem;}
-  .navlinks a{text-decoration:none; color:var(--ink-soft); transition:color .15s;}
-  .navlinks a:hover{color:var(--navy);}
-  .navtoggle{display:none; background:none; border:none; font-size:1.6rem; color:var(--navy); cursor:pointer;}
-  @media(max-width:760px){
-    .navlinks{
-      position:absolute; top:76px; left:0; right:0; background:var(--paper);
-      flex-direction:column; gap:0; border-bottom:1px solid var(--line);
-      max-height:0; overflow:hidden; transition:max-height .25s ease;
-    }
-    .navlinks.open{max-height:320px;}
-    .navlinks a{padding:16px 28px; border-top:1px solid var(--line);}
-    .navtoggle{display:block;}
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
- 
-  /* ---------- Hero / banner ---------- */
-  .hero{
-    position:relative; overflow:hidden; color:#fff;
-    background:linear-gradient(135deg, var(--navy) 0%, #123A67 55%, var(--blue) 100%);
-    padding:110px 0 76px;
-  }
-  .hero .wrap{
-    display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;
-    position:relative; z-index:2;
-  }
-  .hero .eyebrow{
-    color:var(--ice); font-size:0.95rem; margin-bottom:18px;
-    opacity:0; animation:fadeUp .7s ease forwards; animation-delay:.05s;
-  }
-  .hero h1{
-    font-size:clamp(2.4rem, 5.5vw, 4rem); line-height:1.05; max-width:15ch; color:#fff;
-    opacity:0; animation:fadeUp .7s ease forwards; animation-delay:.15s;
-  }
-  .hero p.lead{
-    margin-top:24px; max-width:52ch; font-size:1.15rem; color:#C9D6E4;
-    opacity:0; animation:fadeUp .7s ease forwards; animation-delay:.28s;
-  }
-  .hero .cta-row{
-    margin-top:32px; display:flex; gap:16px; flex-wrap:wrap;
-    opacity:0; animation:fadeUp .7s ease forwards; animation-delay:.4s;
-  }
-  .btn{
-    display:inline-block; padding:13px 26px; border-radius:2px;
-    font-size:0.95rem; text-decoration:none; font-weight:500;
-    border:1px solid transparent; transition:opacity .15s, transform .15s;
-  }
-  .btn:hover{opacity:0.85; transform:translateY(-2px);}
-  .btn-primary{background:#fff; color:var(--navy);}
-  .btn-ghost{border-color:rgba(255,255,255,0.55); color:#fff;}
- 
-  .stats{
-    margin-top:72px; padding-top:40px; border-top:1px solid rgba(255,255,255,0.18);
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
-    opacity:0; animation:fadeUp .7s ease forwards; animation-delay:.52s;
-  }
-  .stat .num{font-family:var(--serif); font-size:2.4rem; color:#fff;}
-  .stat .label{color:#AFC3DA; font-size:0.92rem; margin-top:4px;}
-  @media(max-width:640px){ .stats{grid-template-columns:1fr 1fr;} }
- 
-  .hero-visual{display:flex; align-items:center; justify-content:center; position:relative; z-index:2;}
-  .hero-visual img{
-    width:100%; max-width:320px; opacity:0;
-    animation:fadeScaleIn 1s ease forwards, floatLogo 6s ease-in-out 1.2s infinite;
-    animation-delay:.2s, 1.2s;
-    filter:drop-shadow(0 24px 48px rgba(0,0,0,0.35));
-  }
-  .hero-chart{position:absolute; inset:0; z-index:1; opacity:0.16; width:100%; height:100%;}
-  .hero-chart path{
-    fill:none; stroke:var(--ice); stroke-width:3;
-    stroke-dasharray:900; stroke-dashoffset:900;
-    animation:drawChart 2.6s ease-out forwards; animation-delay:.3s;
-  }
- 
-  @keyframes fadeUp{ from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:translateY(0);} }
-  @keyframes fadeScaleIn{ from{opacity:0; transform:scale(.85);} to{opacity:1; transform:scale(1);} }
-  @keyframes floatLogo{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);} }
-  @keyframes drawChart{ to{stroke-dashoffset:0;} }
- 
-  @media(max-width:820px){
-    .hero .wrap{grid-template-columns:1fr; text-align:center;}
-    .hero-visual{order:-1;}
-    .hero-visual img{max-width:200px;}
-    .hero .cta-row{justify-content:center;}
-  }
- 
-  /* ---------- Scroll reveal (aplicado por JS) ---------- */
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
-  .reveal.is-visible{opacity:1; transform:translateY(0);}
- 
-  /* ---------- Imágenes dentro de una publicación ---------- */
-  .pub-cover{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:2px; margin:16px 0 18px;}
-  .pub-body p{color:var(--ink-soft); font-size:0.97rem; max-width:62ch; margin-bottom:14px;}
-  .pub-body ul{color:var(--ink-soft); font-size:0.97rem; max-width:62ch; margin:0 0 14px 20px;}
-  .pub-body li{margin-bottom:4px;}
-  .pub-body strong{color:var(--navy);}
-  .pub-images{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;}
-  .pub-images img{width:100%; height:170px; object-fit:cover; border-radius:2px;}
-  @media(max-width:480px){ .pub-images{grid-template-columns:1fr;} }
- 
-  /* ---------- Section heading pattern ---------- */
-  .section-head{
-    display:flex; align-items:baseline; justify-content:space-between;
-    gap:24px; margin-bottom:44px; border-bottom:1px solid var(--line); padding-bottom:20px;
-  }
-  .section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);}
-  .section-head .note{color:var(--ink-soft); font-size:0.92rem; max-width:32ch; text-align:right;}
-  @media(max-width:640px){ .section-head{flex-direction:column;} .section-head .note{text-align:left;} }
- 
-  /* ---------- Nosotros ---------- */
-  .nosotros{background:var(--paper-2);}
-  .nosotros .grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
-  .nosotros p{color:var(--ink-soft); margin-bottom:16px;}
-  .nosotros .pillars{display:flex; flex-direction:column; gap:20px;}
-  .pillar{border-left:2px solid var(--blue); padding-left:18px;}
-  .pillar h3{font-size:1.05rem; margin-bottom:4px;}
-  .pillar p{color:var(--ink-soft); font-size:0.95rem; margin:0;}
-  @media(max-width:760px){ .nosotros .grid{grid-template-columns:1fr;} }
- 
-  /* ---------- Publicaciones ---------- */
-  .filters{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;}
-  .filter-btn{
-    font-family:var(--sans); font-size:0.85rem; padding:7px 16px;
-    border:1px solid var(--line); background:#fff; color:var(--ink-soft);
-    border-radius:999px; cursor:pointer; transition:all .15s;
-  }
-  .filter-btn.active{background:var(--navy); border-color:var(--navy); color:#fff;}
- 
-  .pub-list{display:flex; flex-direction:column;}
-  .pub{
-    display:grid; grid-template-columns:130px 1fr; gap:28px;
-    padding:28px 0; border-top:1px solid var(--line);
-  }
-  .pub:last-child{border-bottom:1px solid var(--line);}
-  .pub .meta{color:var(--ink-soft); font-size:0.85rem;}
-  .pub .meta .tag{
-    display:inline-block; color:var(--blue); font-weight:600; margin-bottom:6px;
-  }
-  .pub h3{font-size:1.25rem; margin-bottom:8px;}
-  .pub p{color:var(--ink-soft); font-size:0.97rem; max-width:62ch;}
-  @media(max-width:640px){ .pub{grid-template-columns:1fr; gap:8px;} }
- 
-  /* ---------- Actividades ---------- */
-  .timeline{border-left:2px solid var(--line); margin-left:6px;}
-  .tl-item{position:relative; padding:0 0 40px 32px;}
-  .tl-item::before{
-    content:''; position:absolute; left:-7px; top:4px;
-    width:12px; height:12px; border-radius:50%; background:var(--navy); border:2px solid var(--paper);
-  }
-  .tl-item .date{color:var(--blue); font-size:0.85rem; font-weight:600; margin-bottom:6px;}
-  .tl-item h3{font-size:1.1rem; margin-bottom:6px;}
-  .tl-item p{color:var(--ink-soft); font-size:0.95rem; max-width:60ch;}
- 
-  /* ---------- Integrantes ---------- */
-  .directiva{background:var(--paper-2);}
-  .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px;}
-  @media(max-width:760px){ .team-grid{grid-template-columns:1fr 1fr;} }
-  @media(max-width:480px){ .team-grid{grid-template-columns:1fr;} }
-  .member .photo{
-    width:100%; aspect-ratio:1; border-radius:2px; background:var(--navy);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--ice); font-family:var(--serif); font-size:2rem; margin-bottom:14px;
-  }
-  .member h3{font-size:1.05rem; margin-bottom:2px;}
-  .member .role{color:var(--blue); font-size:0.88rem;}
- 
-  /* ---------- Contacto / footer ---------- */
-  footer{background:var(--navy); color:#EAF0F6; padding:64px 0 32px;}
-  footer h2{color:#fff;}
-  .foot-grid{display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; gap:40px; margin-top:36px;}
-  @media(max-width:900px){ .foot-grid{grid-template-columns:1fr 1fr;} }
-  @media(max-width:520px){ .foot-grid{grid-template-columns:1fr;} }
-  footer p{color:#B9C6D6; font-size:0.95rem;}
-  footer h4{font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em; color:#7E93AC; margin-bottom:14px; font-weight:600;}
-  footer .foot-link{display:block; color:#EAF0F6; text-decoration:none; margin-bottom:10px; font-size:0.95rem;}
-  footer .foot-link:hover{color:var(--ice);}
-  .foot-bottom{
-    margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.12);
-    font-size:0.82rem; color:#7E93AC; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
-  }
- 
 </style>
 </head>
-<body>
- 
-<header>
-  <nav class="wrap">
-    <div class="brand">
-      <img src="logo.png" alt="Logo Club de Finanzas UACh">
-      Club de Finanzas UACh · Puerto Montt
+<body class="bg-ink-950 text-mist-300 antialiased">
+
+<!-- ================= NAV ================= -->
+<header class="sticky top-0 z-50 bg-ink-950/85 backdrop-blur border-b border-ink-700">
+  <nav class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="Logo Club de Finanzas UACh" class="h-9 w-9 object-contain">
+      <span class="text-sm md:text-base font-semibold text-white tracking-tight">Club de Finanzas UACh <span class="text-mist-500 font-normal">/ Puerto Montt</span></span>
     </div>
-    <button class="navtoggle" id="navtoggle" aria-label="Abrir menú">&#9776;</button>
-    <div class="navlinks" id="navlinks">
-      <a href="#nosotros">Nosotros</a>
-      <a href="#publicaciones">Publicaciones</a>
-      <a href="#actividades">Actividades</a>
-      <a href="#integrantes">Integrantes</a>
-      <a href="#contacto">Contacto</a>
+    <button id="navtoggle" class="md:hidden text-white text-2xl leading-none" aria-label="Abrir menú">&#9776;</button>
+    <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#nosotros" class="text-mist-400 hover:text-white transition-colors">Nosotros</a>
+      <a href="#publicaciones" class="text-mist-400 hover:text-white transition-colors">Publicaciones</a>
+      <a href="#actividades" class="text-mist-400 hover:text-white transition-colors">Actividades</a>
+      <a href="#integrantes" class="text-mist-400 hover:text-white transition-colors">Directiva</a>
+      <a href="#contacto" class="text-mist-400 hover:text-white transition-colors">Contacto</a>
     </div>
   </nav>
+  <div id="navlinksMobile" class="md:hidden hidden flex-col border-t border-ink-700">
+    <a href="#nosotros" class="px-6 py-3 border-b border-ink-700 text-mist-400">Nosotros</a>
+    <a href="#publicaciones" class="px-6 py-3 border-b border-ink-700 text-mist-400">Publicaciones</a>
+    <a href="#actividades" class="px-6 py-3 border-b border-ink-700 text-mist-400">Actividades</a>
+    <a href="#integrantes" class="px-6 py-3 border-b border-ink-700 text-mist-400">Directiva</a>
+    <a href="#contacto" class="px-6 py-3 text-mist-400">Contacto</a>
+  </div>
 </header>
- 
+
 <main>
- 
+
   <!-- ================= HERO ================= -->
-  <section class="hero">
-    <svg class="hero-chart" viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true">
+  <section class="relative overflow-hidden grid-lines">
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-950 to-ink-950"></div>
+    <svg class="absolute inset-0 w-full h-full opacity-20 num-plot" viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true">
       <path d="M10,220 L70,180 L130,200 L190,120 L250,150 L310,60 L390,20"></path>
     </svg>
-    <div class="wrap">
+
+    <div class="relative max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20 grid md:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
       <div>
-        <div class="eyebrow">Universidad Austral de Chile — Sede Puerto Montt · Fundado el 4 de septiembre de 2026</div>
-        <h1>Formando criterio financiero desde el sur de Chile</h1>
-        <p class="lead">Somos la comunidad de estudiantes de Ingeniería Comercial y carreras afines interesados en mercados, inversión y gestión. Publicamos análisis, organizamos actividades y conectamos con la industria.</p>
-        <div class="cta-row">
-          <a href="#publicaciones" class="btn btn-primary">Ver publicaciones</a>
-          <a href="#contacto" class="btn btn-ghost">Sumarme al club</a>
+        <p class="text-sm text-mist-500 mb-5">Universidad Austral de Chile — Sede Puerto Montt · Fundado el 4 de septiembre de 2026</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-[1.05] max-w-xl">
+          Formando criterio financiero desde el sur de Chile
+        </h1>
+        <p class="mt-6 max-w-lg text-lg text-mist-400">
+          Comunidad de estudiantes de Ingeniería Comercial y carreras afines que aplica fundamentos de administración financiera, análisis de inversión y procesamiento estadístico de información a problemas reales de la región.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="#publicaciones" class="inline-flex items-center px-6 py-3 rounded-md bg-teal-500 text-ink-950 font-semibold text-sm hover:bg-teal-400 transition-colors">Ver publicaciones</a>
+          <a href="#contacto" class="inline-flex items-center px-6 py-3 rounded-md border border-mist-500/40 text-white font-semibold text-sm hover:border-teal-400 hover:text-teal-400 transition-colors">Sumarme al club</a>
         </div>
- 
-        <div class="stats">
-          <div class="stat">
-            <div class="num" data-stat="miembros">—</div>
-            <div class="label">Miembros activos</div>
+
+        <div class="mt-14 pt-8 border-t border-ink-700 grid grid-cols-3 gap-6 max-w-md">
+          <div>
+            <div class="font-mono-num text-3xl text-white" data-stat="miembros">—</div>
+            <div class="text-xs text-mist-500 mt-1">Miembros activos</div>
           </div>
-          <div class="stat">
-            <div class="num" data-stat="actividades">—</div>
-            <div class="label">Actividades realizadas</div>
+          <div>
+            <div class="font-mono-num text-3xl text-white" data-stat="actividades">—</div>
+            <div class="text-xs text-mist-500 mt-1">Actividades realizadas</div>
           </div>
-          <div class="stat">
-            <div class="num" data-stat="fundacion">—</div>
-            <div class="label">Año de fundación</div>
+          <div>
+            <div class="font-mono-num text-3xl text-white" data-stat="fundacion">—</div>
+            <div class="text-xs text-mist-500 mt-1">Año de fundación</div>
           </div>
         </div>
       </div>
- 
-      <div class="hero-visual">
-        <img src="logo.png" alt="Logo Club de Finanzas UACh">
+
+      <div class="hidden md:flex justify-center">
+        <div class="glass rounded-lg p-10 w-full max-w-[280px] flex items-center justify-center">
+          <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full max-w-[160px]">
+        </div>
       </div>
     </div>
   </section>
- 
+
   <!-- ================= NOSOTROS ================= -->
-  <section class="nosotros" id="nosotros">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Nosotros</h2>
+  <section id="nosotros" class="py-20 md:py-28 bg-ink-900 border-y border-ink-700">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-baseline justify-between border-b border-ink-700 pb-6 mb-14" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Nosotros</h2>
       </div>
-      <div class="grid">
-        <div>
-          <p>El Club de Finanzas UACh Puerto Montt nace del interés de un grupo de estudiantes por profundizar en temas que van más allá de la sala de clases: mercados financieros, análisis de inversión, economía regional y gestión estratégica.</p>
-          <p>Creemos que la formación académica se complementa con espacios de discusión, investigación propia y contacto directo con profesionales de la industria.</p>
+
+      <div class="grid md:grid-cols-2 gap-14">
+        <div data-aos="fade-up">
+          <p class="text-mist-400 mb-4 leading-relaxed">El Club de Finanzas UACh Puerto Montt nace del interés de un grupo de estudiantes por profundizar en temas que van más allá de la sala de clases: mercados financieros, análisis de inversión, economía regional y gestión estratégica.</p>
+          <p class="text-mist-400 leading-relaxed">Creemos que la formación académica se complementa con espacios de discusión, investigación propia y contacto directo con profesionales de la industria — combinando principios teóricos sólidos con herramientas prácticas de procesamiento de datos.</p>
         </div>
-        <div class="pillars">
-          <div class="pillar">
-            <h3>Investigación</h3>
-            <p>Publicamos notas y análisis propios sobre mercados, empresas y coyuntura económica.</p>
+        <div class="flex flex-col gap-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="border-l-2 border-teal-500 pl-5">
+            <h3 class="text-white font-semibold mb-1">Investigación</h3>
+            <p class="text-sm text-mist-500">Publicamos notas y análisis propios sobre mercados, empresas y coyuntura económica.</p>
           </div>
-          <div class="pillar">
-            <h3>Comunidad</h3>
-            <p>Espacios de debate y aprendizaje entre estudiantes de distintos niveles.</p>
+          <div class="border-l-2 border-teal-500 pl-5">
+            <h3 class="text-white font-semibold mb-1">Comunidad</h3>
+            <p class="text-sm text-mist-500">Espacios de debate y aprendizaje entre estudiantes de distintos niveles.</p>
           </div>
-          <div class="pillar">
-            <h3>Vínculo con la industria</h3>
-            <p>Charlas, visitas y contacto con profesionales del área financiera.</p>
+          <div class="border-l-2 border-teal-500 pl-5">
+            <h3 class="text-white font-semibold mb-1">Vínculo con la industria</h3>
+            <p class="text-sm text-mist-500">Charlas, visitas y contacto con profesionales del área financiera.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
- 
+
   <!-- ================= PUBLICACIONES ================= -->
-  <section id="publicaciones">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Publicaciones</h2>
-        <div class="note">Notas, investigaciones y resúmenes semanales escritos por el club.</div>
+  <section id="publicaciones" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-ink-700 pb-6 mb-12" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Publicaciones</h2>
+        <p class="text-sm text-mist-500 max-w-xs text-right">Notas, investigaciones y resúmenes escritos por el club.</p>
       </div>
- 
-      <div class="filters" id="filters"></div>
-      <div class="pub-list" id="pubList"></div>
+
+      <div class="flex gap-3 flex-wrap mb-10" id="filters"></div>
+      <div class="grid gap-8" id="pubList"></div>
     </div>
   </section>
- 
+
   <!-- ================= ACTIVIDADES ================= -->
-  <section class="nosotros" id="actividades">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Actividades</h2>
-        <div class="note">Charlas, visitas y eventos que hemos realizado.</div>
+  <section id="actividades" class="py-20 md:py-28 bg-ink-900 border-y border-ink-700">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-ink-700 pb-6 mb-14" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Actividades</h2>
+        <p class="text-sm text-mist-500 max-w-xs text-right">Charlas, visitas y eventos que hemos realizado.</p>
       </div>
-      <div class="timeline" id="timeline"></div>
+      <div class="relative border-l border-ink-700 ml-2" id="timeline"></div>
     </div>
   </section>
- 
+
   <!-- ================= INTEGRANTES ================= -->
-  <section class="directiva" id="integrantes">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Directiva</h2>
+  <section id="integrantes" class="py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="border-b border-ink-700 pb-6 mb-14" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">Directiva</h2>
       </div>
-      <div class="team-grid" id="teamGrid"></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="teamGrid"></div>
     </div>
   </section>
- 
+
 </main>
- 
+
 <!-- ================= CONTACTO / FOOTER ================= -->
-<footer id="contacto">
-  <div class="wrap">
-    <h2>Conversemos</h2>
-    <div class="foot-grid">
+<footer id="contacto" class="bg-ink-900 border-t border-ink-700 pt-16 pb-8">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-2xl md:text-3xl font-bold text-white">Conversemos</h2>
+    <div class="mt-10 grid md:grid-cols-4 gap-10">
       <div>
-        <p>¿Te interesa el mundo financiero? Súmate al club, propón una nota o invítanos a colaborar.</p>
+        <p class="text-mist-400 text-sm leading-relaxed">¿Te interesa el mundo financiero? Súmate al club, propón una nota o invítanos a colaborar.</p>
       </div>
       <div>
-        <h4>Contacto</h4>
-        <a class="foot-link" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
-        <a class="foot-link" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
-        <a class="foot-link" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Contacto</h4>
+        <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
+        <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
+        <a class="block text-sm text-mist-300 hover:text-teal-400 transition-colors" href="#" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div>
-        <h4>Sede</h4>
-        <p>Universidad Austral de Chile<br>Campus Puerto Montt</p>
+        <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Sede</h4>
+        <p class="text-sm text-mist-400 leading-relaxed">Universidad Austral de Chile<br>Campus Puerto Montt</p>
       </div>
       <div>
-        <h4>Estatutos</h4>
-        <a class="foot-link" href="estatutos.pdf" target="_blank" rel="noopener">Estatutos Club Finanzas UACh</a>
+        <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Estatutos</h4>
+        <a class="block text-sm text-mist-300 hover:text-teal-400 transition-colors" href="estatutos.pdf" target="_blank" rel="noopener">Estatutos Club Finanzas UACh</a>
       </div>
     </div>
-    <div class="foot-bottom">
+    <div class="mt-14 pt-6 border-t border-ink-700 flex flex-wrap justify-between gap-2 text-xs text-mist-500">
       <span>© <span id="year"></span> Club de Finanzas UACh Puerto Montt</span>
       <span>Sitio hecho por y para el club</span>
     </div>
   </div>
 </footer>
- 
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 <script>
 /* ============================================================
    CONTENIDO DEL SITIO
    Edita SOLO esta sección para actualizar el sitio: no necesitas
    tocar el HTML/CSS de arriba. Guarda el archivo y listo.
    ============================================================ */
- 
+
 const CLUB = {
   miembros: 10,
   actividadesRealizadas: 1,
   anioFundacion: 2026
 };
- 
+
 // Cada publicación: { fecha, categoria, titulo, portada (opcional), resumen (HTML), imagenes (opcional) }
-// "portada" es la foto grande que va debajo del título. "imagenes" son las fotos
-// que se muestran al final, de a dos por fila. "resumen" admite HTML (párrafos,
-// listas, negritas) para dar formato al texto de la publicación.
 const PUBLICACIONES = [
   {
     fecha: "2026-09-04",
@@ -420,7 +286,7 @@ const PUBLICACIONES = [
     titulo: "Constitución oficial del Club de Finanzas UACh: un nuevo espacio para el desarrollo económico y estudiantil en la Región de Los Lagos",
     portada: "actividad-portada.jpg",
     resumen: `
-      <p><em>La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.</em></p>
+      <p class="italic"><em>La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.</em></p>
       <p>El pasado viernes 4 de septiembre de 2026 se llevó a cabo la sesión inaugural que dio inicio oficial a las actividades del Club de Finanzas de la Universidad Austral de Chile. La jornada, que contó con una asistencia inicial de 12 estudiantes comprometidos con el área económica y financiera, sirvió como primera mesa de trabajo para delinear el futuro de esta nueva organización académica.</p>
       <p>Durante este primer encuentro se establecieron los acuerdos fundamentales, los protocolos de acción y el plan de trabajo estratégico que guiará el crecimiento y la formación continua del club. Asimismo, se fijaron los estatutos operativos, los cuales sentarán las bases para el funcionamiento transparente y estructurado de la agrupación.</p>
       <p>Para liderar esta etapa fundacional y ejecutar los objetivos trazados, se designó a la directiva oficial, compuesta íntegramente por estudiantes de tercer año de la carrera de Ingeniería Comercial:</p>
@@ -446,7 +312,7 @@ const PUBLICACIONES = [
     ]
   }
 ];
- 
+
 // Cada actividad: { fecha, titulo, descripcion }
 const ACTIVIDADES = [
   {
@@ -455,7 +321,7 @@ const ACTIVIDADES = [
     descripcion: "Primera actividad del Club de Finanzas UACh Puerto Montt: presentación del club al público y estreno de esta página web."
   }
 ];
- 
+
 // Cada integrante: { nombre, cargo }
 const DIRECTIVA = [
   { nombre: "Enzo Solano", cargo: "Presidente" },
@@ -464,135 +330,134 @@ const DIRECTIVA = [
   { nombre: "Alonso Letelier", cargo: "Director de Secretaría" },
   { nombre: "Diego Vargas", cargo: "Director de Vinculación" }
 ];
- 
+
 /* ============================================================
    No es necesario editar debajo de esta línea
    ============================================================ */
- 
+
 document.getElementById('year').textContent = new Date().getFullYear();
- 
 document.querySelector('[data-stat="miembros"]').textContent = CLUB.miembros + "+";
 document.querySelector('[data-stat="actividades"]').textContent = CLUB.actividadesRealizadas + "+";
 document.querySelector('[data-stat="fundacion"]').textContent = CLUB.anioFundacion;
- 
+
 function fmtFecha(iso){
   try{
     const d = new Date(iso + "T00:00:00");
     return d.toLocaleDateString('es-CL', { day:'numeric', month:'short', year:'numeric' });
   }catch(e){ return iso; }
 }
- 
-// Animación al hacer scroll: cualquier elemento pasado a observeReveal()
-// aparece con un fundido/desplazamiento suave la primera vez que entra en pantalla.
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('is-visible');
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
- 
-function observeReveal(el, delayMs){
-  el.classList.add('reveal');
-  if(delayMs) el.style.transitionDelay = delayMs + 'ms';
-  io.observe(el);
-}
- 
-// Activa la animación en los bloques ya presentes en el HTML
-document.querySelectorAll('.section-head, .pillar, .foot-grid > div')
-  .forEach((el, i) => observeReveal(el, (i % 4) * 70));
- 
+
 // Publicaciones + filtros
 const pubList = document.getElementById('pubList');
 const filtersEl = document.getElementById('filters');
 const categorias = ["Todas", ...new Set(PUBLICACIONES.map(p => p.categoria))];
- 
+
 function renderPubs(filtro){
   pubList.innerHTML = "";
   const items = [...PUBLICACIONES]
     .sort((a,b) => new Date(b.fecha) - new Date(a.fecha))
     .filter(p => filtro === "Todas" || p.categoria === filtro);
- 
+
   if(items.length === 0){
-    pubList.innerHTML = '<p style="color:var(--ink-soft); padding:24px 0; font-family:var(--serif); font-size:1.3rem;">Próximamente</p>';
+    pubList.innerHTML = '<p class="text-mist-500 py-10 text-lg">Próximamente</p>';
     return;
   }
- 
+
   items.forEach((p, i) => {
-    const el = document.createElement('div');
-    el.className = 'pub';
+    const el = document.createElement('article');
+    el.className = 'glass rounded-lg p-6 md:p-8';
+    el.setAttribute('data-aos', 'fade-up');
+    el.setAttribute('data-aos-delay', String((i % 3) * 80));
+
     const tieneImagenes = Array.isArray(p.imagenes) && p.imagenes.length > 0;
     const portadaHtml = p.portada
-      ? `<img class="pub-cover" src="${p.portada}" alt="${p.titulo}">`
+      ? `<img class="w-full aspect-video object-cover rounded-md my-5" src="${p.portada}" alt="${p.titulo}">`
       : '';
     const imagenesHtml = tieneImagenes
-      ? `<div class="pub-images">${p.imagenes.map(src => `<img src="${src}" alt="${p.titulo}">`).join('')}</div>`
+      ? `<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-5">${p.imagenes.map(src => `<img class="w-full h-36 object-cover rounded-md" src="${src}" alt="${p.titulo}">`).join('')}</div>`
       : '';
+
     el.innerHTML = `
-      <div class="meta">${fmtFecha(p.fecha)}</div>
-      <div>
-        <span class="meta tag">${p.categoria}</span>
-        <h3>${p.titulo}</h3>
-        ${portadaHtml}
-        <div class="pub-body">${p.resumen}</div>
-        ${imagenesHtml}
-      </div>`;
+      <div class="flex items-center gap-3 text-xs text-mist-500 mb-3">
+        <span class="font-mono-num">${fmtFecha(p.fecha)}</span>
+        <span class="w-1 h-1 rounded-full bg-mist-500"></span>
+        <span class="text-teal-400 font-semibold">${p.categoria}</span>
+      </div>
+      <h3 class="text-xl md:text-2xl font-bold text-white leading-snug">${p.titulo}</h3>
+      ${portadaHtml}
+      <div class="prose-pub text-mist-400 text-[0.97rem] leading-relaxed max-w-none [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:ml-5 [&_ul]:list-disc [&_li]:mb-1 [&_strong]:text-white">${p.resumen}</div>
+      ${imagenesHtml}
+    `;
     pubList.appendChild(el);
-    observeReveal(el, (i % 4) * 70);
   });
 }
- 
+
 categorias.forEach(cat => {
   const btn = document.createElement('button');
-  btn.className = 'filter-btn' + (cat === "Todas" ? " active" : "");
+  btn.className = 'text-sm px-4 py-1.5 rounded-full border transition-colors ' +
+    (cat === "Todas" ? 'bg-teal-500 border-teal-500 text-ink-950 font-semibold' : 'border-ink-700 text-mist-400 hover:border-teal-400 hover:text-teal-400');
+  btn.dataset.cat = cat;
   btn.textContent = cat;
   btn.onclick = () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    filtersEl.querySelectorAll('button').forEach(b => {
+      b.className = 'text-sm px-4 py-1.5 rounded-full border transition-colors border-ink-700 text-mist-400 hover:border-teal-400 hover:text-teal-400';
+    });
+    btn.className = 'text-sm px-4 py-1.5 rounded-full border transition-colors bg-teal-500 border-teal-500 text-ink-950 font-semibold';
     renderPubs(cat);
   };
   filtersEl.appendChild(btn);
 });
 if(PUBLICACIONES.length === 0){ filtersEl.style.display = 'none'; }
 renderPubs("Todas");
- 
+
 // Actividades
 const timeline = document.getElementById('timeline');
 ACTIVIDADES.forEach((a, i) => {
   const el = document.createElement('div');
-  el.className = 'tl-item';
+  el.className = 'relative pl-9 pb-10';
+  el.setAttribute('data-aos', 'fade-up');
+  el.setAttribute('data-aos-delay', String((i % 3) * 80));
   el.innerHTML = `
-    <div class="date">${a.fecha}</div>
-    <h3>${a.titulo}</h3>
-    <p>${a.descripcion}</p>`;
+    <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-teal-500 ring-4 ring-ink-900"></span>
+    <div class="font-mono-num text-xs text-teal-400 mb-2">${a.fecha}</div>
+    <h3 class="text-lg font-bold text-white mb-2">${a.titulo}</h3>
+    <p class="text-sm text-mist-400 max-w-xl leading-relaxed">${a.descripcion}</p>
+  `;
   timeline.appendChild(el);
-  observeReveal(el, (i % 4) * 70);
 });
- 
+
 // Directiva
 const teamGrid = document.getElementById('teamGrid');
 DIRECTIVA.forEach((m, i) => {
   const initials = m.nombre.split(" ").map(w => w[0]).slice(0,2).join("");
   const el = document.createElement('div');
-  el.className = 'member';
+  el.className = 'glass rounded-lg p-6 flex items-center gap-4';
+  el.setAttribute('data-aos', 'fade-up');
+  el.setAttribute('data-aos-delay', String((i % 3) * 80));
   el.innerHTML = `
-    <div class="photo">${initials}</div>
-    <h3>${m.nombre}</h3>
-    <div class="role">${m.cargo}</div>`;
+    <div class="w-14 h-14 flex-shrink-0 rounded-md bg-ink-700 flex items-center justify-center text-teal-400 font-mono-num text-base">${initials}</div>
+    <div>
+      <h3 class="text-white font-semibold">${m.nombre}</h3>
+      <div class="text-xs text-teal-400 mt-0.5">${m.cargo}</div>
+    </div>
+  `;
   teamGrid.appendChild(el);
-  observeReveal(el, (i % 3) * 70);
 });
- 
+
 // Menú móvil
 document.getElementById('navtoggle').addEventListener('click', () => {
-  document.getElementById('navlinks').classList.toggle('open');
+  document.getElementById('navlinksMobile').classList.toggle('hidden');
+  document.getElementById('navlinksMobile').classList.toggle('flex');
 });
-document.querySelectorAll('.navlinks a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('navlinks').classList.remove('open'));
+document.querySelectorAll('#navlinksMobile a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navlinksMobile').classList.add('hidden');
+    document.getElementById('navlinksMobile').classList.remove('flex');
+  });
 });
+
+AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
 </script>
- 
+
 </body>
 </html>
- 
