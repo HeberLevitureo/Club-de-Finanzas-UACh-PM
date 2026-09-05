@@ -107,8 +107,8 @@
 <header class="sticky top-0 z-50 bg-ink-950/85 backdrop-blur border-b border-ink-700">
   <nav class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <div class="h-10 w-10 rounded-lg bg-ink-800 border border-ink-600 flex items-center justify-center p-1.5">
-        <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain">
+      <div class="h-10 w-10 rounded-2xl bg-ink-800 border border-ink-600 flex items-center justify-center p-1.5">
+        <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_100%)]">
       </div>
       <span class="text-sm md:text-base font-semibold text-white tracking-tight">Club de Finanzas UACh</span>
     </div>
@@ -171,8 +171,8 @@
 
       <div class="hidden md:flex justify-center">
         <div class="glass rounded-xl p-10 w-full max-w-[280px] flex items-center justify-center">
-          <div class="rounded-lg bg-ink-800/70 border border-ink-600 p-6 w-full flex items-center justify-center">
-            <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full max-w-[150px]">
+          <div class="rounded-3xl bg-ink-800/70 border border-ink-600 p-6 w-full flex items-center justify-center">
+            <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full max-w-[150px] rounded-3xl [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]">
           </div>
         </div>
       </div>
@@ -310,13 +310,14 @@ const CLUB = {
   anioFundacion: 2026
 };
 
-// Cada publicación: { fecha, categoria, titulo, portada, extracto, resumen (HTML, para la futura página completa), imagenes }
+// Cada publicación: { fecha, categoria, titulo, portada, extracto, url (página HTML de la nota completa), resumen (HTML, contenido de esa página), imagenes }
 const PUBLICACIONES = [
   {
     fecha: "2026-09-04",
     categoria: "Comunicado",
     titulo: "Constitución oficial del Club de Finanzas UACh: un nuevo espacio para el desarrollo económico y estudiantil en la Región de Los Lagos",
     portada: "actividad-portada.jpg",
+    url: "publicacion-1.html",
     extracto: "La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.",
     resumen: `
       <p class="italic"><em>La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.</em></p>
@@ -380,13 +381,6 @@ function fmtFecha(iso){
   }catch(e){ return iso; }
 }
 
-// Placeholder: cuando existan páginas individuales para cada nota, reemplazar
-// este alert por la navegación real (ej. window.location = `notas/${slug}.html`).
-function verNotaCompleta(index){
-  const p = PUBLICACIONES[index];
-  alert(`Próximamente: página completa de "${p.titulo}"`);
-}
-
 // Publicaciones + filtros
 const pubList = document.getElementById('pubList');
 const filtersEl = document.getElementById('filters');
@@ -424,10 +418,10 @@ function renderPubs(filtro){
         </div>
         <h3 class="text-lg font-bold text-white leading-snug mb-3">${p.titulo}</h3>
         <p class="text-sm text-mist-400 leading-relaxed line-clamp-2 flex-1">${p.extracto}</p>
-        <button onclick="verNotaCompleta(${realIndex})"
+        <a href="${p.url || '#'}"
           class="mt-5 inline-flex items-center justify-center px-5 py-2.5 rounded-md border border-teal-500/50 text-teal-400 text-sm font-semibold hover:bg-teal-500 hover:text-ink-950 transition-colors">
           Ver nota completa
-        </button>
+        </a>
       </div>
     `;
     pubList.appendChild(el);
