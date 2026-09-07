@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Próxima Sesión: Fundamentos de Inversión y Mercado - Club de Finanzas UACh</title>
+<link rel="icon" href="logo.png">
+
+<!-- Tailwind CDN y Configuración -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: { 950: '#080D19', 900: '#0C1424', 800: '#121B2E', 700: '#1A2740', 600: '#243357' },
+          mist: { 300: '#B7C3D9', 400: '#8FA0BE', 500: '#6C7C9C' },
+          teal: { 400: '#4FD1C5', 500: '#2FB6AA' },
+        },
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #080D19; color: #B7C3D9; }
+  .glass { background: linear-gradient(180deg, rgba(26,39,64,0.55) 0%, rgba(18,27,46,0.55) 100%); backdrop-filter: blur(14px); border: 1px solid rgba(143,160,190,0.14); }
+  .prose p { margin-bottom: 1.5em; line-height: 1.8; }
+  .prose ul { list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.5em; }
+  .prose li { margin-bottom: 0.5em; }
+  .prose strong { color: white; font-weight: 600; }
+</style>
+</head>
+<body class="bg-ink-950 antialiased">
+
+<header class="sticky top-0 z-50 bg-ink-950/85 backdrop-blur border-b border-ink-700">
+  <nav class="max-w-4xl mx-auto px-6 h-[72px] flex items-center">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <div class="h-10 w-10 rounded-2xl bg-ink-800 border border-ink-600 flex items-center justify-center p-1.5 transition-colors group-hover:border-teal-400">
+        <img src="logo.png" alt="Logo" class="w-full h-full object-contain rounded-2xl">
+      </div>
+      <span class="text-sm font-semibold text-white tracking-tight group-hover:text-teal-400 transition-colors">← Volver al inicio</span>
+    </a>
+  </nav>
+</header>
+
+<main class="py-16 md:py-24">
+  <article class="max-w-3xl mx-auto px-6">
+    
+    <!-- Encabezado de la nota -->
+    <header class="mb-12 border-b border-ink-700 pb-10">
+      <div class="flex items-center gap-3 text-sm text-mist-500 mb-6">
+        <span class="font-mono text-teal-400">07 de septiembre, 2026</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-mist-500"></span>
+        <span class="text-white font-semibold tracking-wide uppercase text-xs">Comunicado</span>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+        Próxima Sesión: Fundamentos de Inversión, Mercado de Capitales y Costos para PYMES
+      </h1>
+      <p class="text-lg md:text-xl text-mist-400 leading-relaxed">
+        Invitamos a toda la comunidad estudiantil a nuestra próxima sesión formativa. Abordaremos el funcionamiento de la economía actual, herramientas de gestión y estrategias de inversión.
+      </p>
+    </header>
+
+    <!-- Afiche del evento actualizado a PNG -->
+    <div class="mb-12 flex justify-center">
+      <img src="cdfr2.png" alt="Afiche Próxima Sesión Club de Finanzas" class="rounded-xl border border-ink-700 shadow-2xl max-w-full md:max-w-md w-full h-auto object-contain">
+    </div>
+
+    <!-- Cuerpo del texto -->
+    <div class="prose max-w-none text-mist-300 text-base md:text-lg">
+      <p>El <strong>Club de Finanzas UACh</strong> invita a toda la comunidad estudiantil y académica a participar de nuestra próxima sesión de análisis y formación financiera, a realizarse este <strong>martes 08 de septiembre a las 09:50 horas</strong>.</p>
+      
+      <p>El objetivo de esta jornada es entregar herramientas prácticas y conocimientos fundamentales sobre el funcionamiento de la economía actual. Los ejes temáticos de la reunión serán:</p>
+      
+      <ul>
+        <li><strong>Introducción al mercado de capitales:</strong> Comprendiendo las bases del sistema financiero.</li>
+        <li><strong>Contabilidad de costos aplicados a PYMES:</strong> Herramientas de gestión esenciales para el desarrollo de pequeños y medianos negocios.</li>
+        <li><strong>¿Por qué ahorrar e invertir?:</strong> Estrategias y fundamentos para la toma de decisiones financieras inteligentes.</li>
+      </ul>
+
+      <div class="glass p-8 rounded-xl border border-ink-600 my-10">
+        <h3 class="text-xl font-bold text-white mb-4">Coordenadas del evento:</h3>
+        <ul class="space-y-3 !list-none !pl-0 !mb-0 text-mist-300">
+          <li><strong class="text-teal-400">Fecha:</strong> Martes, 08 de septiembre.</li>
+          <li><strong class="text-teal-400">Hora:</strong> 09:50 hrs.</li>
+          <li><strong class="text-teal-400">Lugar:</strong> Sala 1, Edificio Multimedia (Sede Los Pinos).</li>
+        </ul>
+      </div>
+
+      <p>La asistencia es abierta a todos los estudiantes interesados en potenciar sus aptitudes económicas. ¡Los esperamos para seguir construyendo juntos el liderazgo financiero en la Región de Los Lagos!</p>
+    </div>
+  </article>
+</main>
+
+<footer class="bg-ink-900 border-t border-ink-700 py-8 text-center text-sm text-mist-500">
+  <p>© 2026 Club de Finanzas UACh. Sitio hecho por y para el club.</p>
+</footer>
+
+</body>
+</html>
