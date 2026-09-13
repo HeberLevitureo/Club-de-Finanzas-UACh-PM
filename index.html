@@ -31,6 +31,15 @@
 
     <link rel="icon" href="logo.png">
 
+    <!-- Canonical -->
+    <link rel="canonical" href="https://club-de-finanzas-uach-pm.clubfinanzasuach.workers.dev/">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Club de Finanzas UACh">
+    <meta name="twitter:description" content="Formando criterio financiero desde el sur de Chile. Comunidad de estudiantes de Ingeniería Comercial.">
+    <meta name="twitter:image" content="https://club-de-finanzas-uach-pm.clubfinanzasuach.workers.dev/logo.png">
+
 <!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -48,7 +57,7 @@
           mist: {
             300: '#B7C3D9',
             400: '#8FA0BE',
-            500: '#6C7C9C',
+            500: '#9AA9C4',
           },
           amber: {
             400: '#D2A44C',
@@ -89,7 +98,7 @@
       </div>
       <span class="text-sm md:text-base font-semibold text-white tracking-tight">Club de Finanzas UACh</span>
     </div>
-    <button id="navtoggle" class="md:hidden text-white text-2xl leading-none" aria-label="Abrir menú">&#9776;</button>
+    <button id="navtoggle" class="md:hidden text-white text-2xl leading-none p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinksMobile">&#9776;</button>
     <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm">
       <a href="#nosotros" class="text-mist-400 hover:text-white transition-colors">Nosotros</a>
       <a href="#publicaciones" class="text-mist-400 hover:text-white transition-colors">Publicaciones</a>
@@ -259,7 +268,9 @@
         <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Contacto</h4>
         <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
         <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
-        <a class="block text-sm text-mist-300 hover:text-teal-400 transition-colors" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- LinkedIn: descomentar y agregar la URL real cuando el club cree la página -->
+        <!-- <a class="block text-sm text-mist-300 hover:text-teal-400 transition-colors" href="https://www.linkedin.com/company/TU-PAGINA" target="_blank" rel="noopener">LinkedIn</a> -->
+        <span class="block text-sm text-mist-500">LinkedIn (próximamente)</span>
       </div>
       <div>
         <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Sede</h4>
@@ -509,14 +520,19 @@ DIRECTIVA.forEach((m, i) => {
 });
 
 // Menú móvil
-document.getElementById('navtoggle').addEventListener('click', () => {
-  document.getElementById('navlinksMobile').classList.toggle('hidden');
-  document.getElementById('navlinksMobile').classList.toggle('flex');
+const navtoggle = document.getElementById('navtoggle');
+const navlinksMobile = document.getElementById('navlinksMobile');
+
+navtoggle.addEventListener('click', () => {
+  const abierto = navlinksMobile.classList.toggle('flex');
+  navlinksMobile.classList.toggle('hidden');
+  navtoggle.setAttribute('aria-expanded', abierto);
 });
-document.querySelectorAll('#navlinksMobile a').forEach(a => {
+navlinksMobile.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
-    document.getElementById('navlinksMobile').classList.add('hidden');
-    document.getElementById('navlinksMobile').classList.remove('flex');
+    navlinksMobile.classList.add('hidden');
+    navlinksMobile.classList.remove('flex');
+    navtoggle.setAttribute('aria-expanded', 'false');
   });
 });
 
