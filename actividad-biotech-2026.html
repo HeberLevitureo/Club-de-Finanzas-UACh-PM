@@ -6,29 +6,40 @@
     <title>Biotech Week Puerto Varas 2026 - Club de Finanzas UACh</title>
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: {
-            50: '#F0F4F8',  /* Azul marino ultra claro (para fondos de secciones alternas) */
-            100: '#D9E2EC', /* Azul marino muy claro (para bordes y divisores) */
-            400: '#486581', /* Azul marino medio-claro (para fechas y metadatos) */
-            600: '#243B53', /* Azul marino medio (para textos de párrafos) */
-            800: '#102A43', /* Azul marino oscuro (para botones y acentos) */
-            900: '#061626', /* Azul marino casi negro (para títulos principales) */
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: {
+                950: '#080D19',
+                900: '#0C1424',
+                800: '#121B2E',
+                700: '#1A2740',
+                600: '#243357',
+              },
+              mist: {
+                300: '#B7C3D9',
+                400: '#8FA0BE',
+                500: '#6C7C9C',
+              },
+              amber: {
+                400: '#D2A44C',
+                500: '#C0902E',
+              },
+              teal: {
+                400: '#4FD1C5',
+                500: '#2FB6AA',
+              },
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              mono: ['"IBM Plex Mono"', 'monospace'],
+            },
           },
-          /* Mantenemos el negro por defecto de Tailwind (bg-black, text-black) para los acentos menores */
         },
-        fontFamily: {
-          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-          mono: ['"IBM Plex Mono"', 'monospace'],
-        },
-      },
-    },
-  };
-</script>
+      };
+    </script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
