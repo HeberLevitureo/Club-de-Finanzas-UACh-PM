@@ -14,26 +14,7 @@
     theme: {
       extend: {
         colors: {
-          ink: {
-            950: '#080D19',
-            900: '#0C1424',
-            800: '#121B2E',
-            700: '#1A2740',
-            600: '#243357',
-          },
-          mist: {
-            300: '#B7C3D9',
-            400: '#8FA0BE',
-            500: '#6C7C9C',
-          },
-          amber: {
-            400: '#D2A44C',
-            500: '#C0902E',
-          },
-          teal: {
-            400: '#4FD1C5',
-            500: '#2FB6AA',
-          },
+          ink: { 950: '#080D19', 900: '#0C1424', 800: '#121B2E', 700: '#1A2740', 600: '#243357' },
         },
         fontFamily: {
           sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -50,52 +31,49 @@
 
 <style>
   html { scroll-behavior: smooth; }
-  body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #080D19; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
   .font-mono-num { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
 
   ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: #080D19; }
-  ::-webkit-scrollbar-thumb { background: #243357; border-radius: 6px; }
+  ::-webkit-scrollbar-track { background: #f8fafc; }
+  ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 6px; }
 
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid #4FD1C5;
-    outline-offset: 3px;
-  }
+  a:focus-visible, button:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
 
-  .article-body p { color: #8FA0BE; line-height: 1.75; margin-bottom: 1.25rem; }
+  .article-body p { color: #475569; line-height: 1.75; margin-bottom: 1.25rem; }
   .article-body p:last-child { margin-bottom: 0; }
-  .article-body ul { color: #8FA0BE; line-height: 1.75; margin: 0 0 1.25rem 1.25rem; list-style: disc; }
+  .article-body ul { color: #475569; line-height: 1.75; margin: 0 0 1.25rem 1.25rem; list-style: disc; }
   .article-body li { margin-bottom: 0.35rem; }
-  .article-body strong { color: #fff; }
-  .article-body em { color: #B7C3D9; }
+  .article-body strong { color: #080D19; font-weight: bold; }
+  .article-body em { color: #64748b; }
 </style>
 </head>
-<body class="bg-ink-950 text-mist-300 antialiased">
+<body class="bg-white text-slate-600 antialiased">
 
 <!-- ================= NAV ================= -->
-<header class="sticky top-0 z-50 bg-ink-950/85 backdrop-blur border-b border-ink-700">
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 shadow-sm">
   <nav class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <div class="h-10 w-10 rounded-2xl bg-ink-800 border border-ink-600 flex items-center justify-center p-1.5">
-        <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_100%)]">
+      <div class="h-10 w-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center p-1.5 shadow-sm">
+        <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain">
       </div>
-      <span class="text-sm md:text-base font-semibold text-white tracking-tight">Club de Finanzas UACh</span>
+      <span class="text-sm md:text-base font-bold text-ink-950 tracking-tight">Club de Finanzas UACh</span>
     </div>
-    <button id="navtoggle" class="md:hidden text-white text-2xl leading-none" aria-label="Abrir menú">&#9776;</button>
-    <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm">
-      <a href="index.html#nosotros" class="text-mist-400 hover:text-white transition-colors">Nosotros</a>
-      <a href="index.html#publicaciones" class="text-mist-400 hover:text-white transition-colors">Publicaciones</a>
-      <a href="index.html#actividades" class="text-mist-400 hover:text-white transition-colors">Actividades</a>
-      <a href="index.html#integrantes" class="text-mist-400 hover:text-white transition-colors">Directiva</a>
-      <a href="index.html#contacto" class="text-mist-400 hover:text-white transition-colors">Contacto</a>
+    <button id="navtoggle" class="md:hidden text-ink-950 text-2xl leading-none" aria-label="Abrir menú">&#9776;</button>
+    <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="index.html#nosotros" class="text-slate-500 hover:text-ink-900 transition-colors">Nosotros</a>
+      <a href="index.html#publicaciones" class="text-slate-500 hover:text-ink-900 transition-colors">Publicaciones</a>
+      <a href="index.html#actividades" class="text-slate-500 hover:text-ink-900 transition-colors">Actividades</a>
+      <a href="index.html#integrantes" class="text-slate-500 hover:text-ink-900 transition-colors">Directiva</a>
+      <a href="index.html#contacto" class="text-slate-500 hover:text-ink-900 transition-colors">Contacto</a>
     </div>
   </nav>
-  <div id="navlinksMobile" class="md:hidden hidden flex-col border-t border-ink-700">
-    <a href="index.html#nosotros" class="px-6 py-3 border-b border-ink-700 text-mist-400">Nosotros</a>
-    <a href="index.html#publicaciones" class="px-6 py-3 border-b border-ink-700 text-mist-400">Publicaciones</a>
-    <a href="index.html#actividades" class="px-6 py-3 border-b border-ink-700 text-mist-400">Actividades</a>
-    <a href="index.html#integrantes" class="px-6 py-3 border-b border-ink-700 text-mist-400">Directiva</a>
-    <a href="index.html#contacto" class="px-6 py-3 text-mist-400">Contacto</a>
+  <div id="navlinksMobile" class="md:hidden hidden flex-col border-t border-slate-200 bg-white">
+    <a href="index.html#nosotros" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Nosotros</a>
+    <a href="index.html#publicaciones" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Publicaciones</a>
+    <a href="index.html#actividades" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Actividades</a>
+    <a href="index.html#integrantes" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Directiva</a>
+    <a href="index.html#contacto" class="px-6 py-4 text-slate-600 font-medium">Contacto</a>
   </div>
 </header>
 
@@ -104,21 +82,21 @@
   <article class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-6">
 
-      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-mist-500 hover:text-teal-400 transition-colors mb-10">
+      <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-blue-600 transition-colors mb-10 font-medium">
         <span aria-hidden="true">←</span> Volver al inicio
       </a>
 
-      <div class="flex items-center gap-3 text-xs text-mist-500 mb-4">
+      <div class="flex items-center gap-3 text-xs text-slate-500 mb-4 font-medium">
         <span class="font-mono-num">4 sept 2026</span>
-        <span class="w-1 h-1 rounded-full bg-mist-500"></span>
-        <span class="text-teal-400 font-semibold">Comunicado</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+        <span class="text-blue-600 font-bold uppercase">Comunicado</span>
       </div>
 
-      <h1 class="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-8">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-ink-950 leading-tight mb-8">
         Constitución oficial del Club de Finanzas UACh: un nuevo espacio para el desarrollo económico y estudiantil en la Región de Los Lagos
       </h1>
 
-      <img src="actividad-portada.jpg" alt="Sesión inaugural del Club de Finanzas UACh" class="w-full aspect-video object-cover rounded-2xl mb-12">
+      <img src="actividad-portada.jpg" alt="Sesión inaugural del Club de Finanzas UACh" class="w-full aspect-video object-cover rounded-xl shadow-sm border border-slate-100 mb-12">
 
       <div class="article-body text-[1.05rem]">
         <p><em>La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.</em></p>
@@ -139,15 +117,15 @@
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-12">
-        <img src="actividad-1.jpg" alt="" class="w-full h-36 object-cover rounded-md">
-        <img src="actividad-2.jpg" alt="" class="w-full h-36 object-cover rounded-md">
-        <img src="actividad-3.jpg" alt="" class="w-full h-36 object-cover rounded-md">
-        <img src="actividad-4.jpg" alt="" class="w-full h-36 object-cover rounded-md">
-        <img src="actividad-5.jpg" alt="" class="w-full h-36 object-cover rounded-md">
-        <img src="actividad-6.jpg" alt="" class="w-full h-36 object-cover rounded-md">
+        <img src="actividad-1.jpg" alt="" class="w-full h-36 object-cover rounded-md border border-slate-200">
+        <img src="actividad-2.jpg" alt="" class="w-full h-36 object-cover rounded-md border border-slate-200">
+        <img src="actividad-3.jpg" alt="" class="w-full h-36 object-cover rounded-md border border-slate-200">
+        <img src="actividad-4.jpg" alt="" class="w-full h-36 object-cover rounded-md border border-slate-200">
+        <img src="actividad-5.jpg" alt="" class="w-full h-36 object-cover rounded-md border border-slate-200">
+        <img src="actividad-6.jpg" alt="" class="w-full h-36 object-cover rounded-md border border-slate-200">
       </div>
 
-      <a href="index.html#publicaciones" class="inline-flex items-center gap-2 text-sm text-mist-500 hover:text-teal-400 transition-colors mt-14">
+      <a href="index.html#publicaciones" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-blue-600 transition-colors mt-14 font-medium">
         <span aria-hidden="true">←</span> Volver a todas las publicaciones
       </a>
     </div>
@@ -155,25 +133,25 @@
 </main>
 
 <!-- ================= CONTACTO / FOOTER ================= -->
-<footer id="contacto" class="bg-ink-900 border-t border-ink-700 pt-16 pb-8">
+<footer id="contacto" class="bg-ink-950 pt-16 pb-8">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-2xl md:text-3xl font-bold text-white">Conversemos</h2>
     <div class="mt-10 grid md:grid-cols-3 gap-10">
       <div>
-        <p class="text-mist-400 text-sm leading-relaxed">¿Te interesa el mundo financiero? Súmate al club, propón una nota o invítanos a colaborar.</p>
+        <p class="text-slate-400 text-sm leading-relaxed">¿Te interesa el mundo financiero? Súmate al club, propón una nota o invítanos a colaborar.</p>
       </div>
       <div>
-        <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Contacto</h4>
-        <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
-        <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
-        <a class="block text-sm text-mist-300 hover:text-teal-400 transition-colors" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <h4 class="text-xs font-bold text-slate-500 mb-4 tracking-wider uppercase">Contacto</h4>
+        <a class="block text-sm text-slate-300 hover:text-white mb-2.5 transition-colors" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
+        <a class="block text-sm text-slate-300 hover:text-white mb-2.5 transition-colors" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
+        <a class="block text-sm text-slate-300 hover:text-white transition-colors" href="#" target="_blank" rel="noopener">LinkedIn</a>
       </div>
       <div>
-        <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Sede</h4>
-        <p class="text-sm text-mist-400 leading-relaxed">Universidad Austral de Chile<br>Campus Puerto Montt</p>
+        <h4 class="text-xs font-bold text-slate-500 mb-4 tracking-wider uppercase">Sede</h4>
+        <p class="text-sm text-slate-400 leading-relaxed">Universidad Austral de Chile<br>Campus Puerto Montt</p>
       </div>
     </div>
-    <div class="mt-14 pt-6 border-t border-ink-700 flex flex-wrap justify-between gap-2 text-xs text-mist-500">
+    <div class="mt-14 pt-6 border-t border-ink-800 flex flex-wrap justify-between gap-2 text-xs text-slate-500">
       <span>© <span id="year"></span> Club de Finanzas UACh</span>
       <span>Sitio hecho por y para el club</span>
     </div>
