@@ -72,7 +72,7 @@
 
 <!-- ================= NAV ================= -->
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 shadow-sm">
-  <nav class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
+  <nav class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="h-10 w-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center p-1.5 shadow-sm">
         <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain">
@@ -80,12 +80,18 @@
       <span class="text-sm md:text-base font-bold text-ink-950 tracking-tight">Club de Finanzas UACh</span>
     </div>
     <button id="navtoggle" class="md:hidden text-ink-950 text-2xl leading-none p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinksMobile">&#9776;</button>
-    <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm font-medium">
+    <div id="navlinks" class="hidden md:flex items-center gap-6 text-sm font-medium">
       <a href="#nosotros" class="text-slate-500 hover:text-ink-900 transition-colors">Nosotros</a>
       <a href="#publicaciones" class="text-slate-500 hover:text-ink-900 transition-colors">Publicaciones</a>
       <a href="#actividades" class="text-slate-500 hover:text-ink-900 transition-colors">Actividades</a>
       <a href="#integrantes" class="text-slate-500 hover:text-ink-900 transition-colors">Directiva</a>
       <a href="#contacto" class="text-slate-500 hover:text-ink-900 transition-colors">Contacto</a>
+      
+      <!-- Nuevas secciones resaltadas -->
+      <div class="flex items-center gap-3 border-l border-slate-200 pl-6 ml-2">
+        <a href="pymes.html" class="px-4 py-2 rounded-md bg-blue-50 text-blue-700 font-bold hover:bg-blue-100 transition-colors">PYMES</a>
+        <a href="educacion-financiera.html" class="px-4 py-2 rounded-md bg-blue-50 text-blue-700 font-bold hover:bg-blue-100 transition-colors">Educación Financiera</a>
+      </div>
     </div>
   </nav>
   <div id="navlinksMobile" class="md:hidden hidden flex-col border-t border-slate-200 bg-white">
@@ -93,7 +99,10 @@
     <a href="#publicaciones" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Publicaciones</a>
     <a href="#actividades" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Actividades</a>
     <a href="#integrantes" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Directiva</a>
-    <a href="#contacto" class="px-6 py-4 text-slate-600 font-medium">Contacto</a>
+    <a href="#contacto" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Contacto</a>
+    <!-- Nuevas secciones resaltadas en móvil -->
+    <a href="pymes.html" class="px-6 py-4 border-b border-slate-100 text-blue-700 font-bold bg-blue-50/50">PYMES</a>
+    <a href="educacion-financiera.html" class="px-6 py-4 text-blue-700 font-bold bg-blue-50/50">Educación Financiera</a>
   </div>
 </header>
 
