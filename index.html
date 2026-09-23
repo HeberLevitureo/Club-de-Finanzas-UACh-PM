@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título principal actualizado -->
     <title>Club de Finanzas UACh</title>
     <meta name="description" content="Comunidad de estudiantes de Ingeniería Comercial y carreras afines en la Universidad Austral de Chile. Análisis de inversión, economía regional y gestión financiera.">
     <meta name="keywords" content="club de finanzas, UACh, ingeniería comercial, universidad austral, economía, finanzas sur de chile">
     <meta name="author" content="Club de Finanzas UACh">
     <meta name="google-site-verification" content="3xHGXgBjs-0UrDB5TDWZuWEEuzGI8vkeISFS83nkqeE" />
 
-    <!-- Datos estructurados JSON-LD para asignarle el nombre oficial al sitio en Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -22,7 +20,6 @@
     }
     </script>
 
-    <!-- Open Graph para redes sociales (WhatsApp, LinkedIn, Instagram) -->
     <meta property="og:title" content="Club de Finanzas UACh">
     <meta property="og:description" content="Formando criterio financiero desde el sur de Chile. Comunidad de estudiantes de Ingeniería Comercial.">
     <meta property="og:image" content="https://club-de-finanzas-uach-pm.clubfinanzasuach.workers.dev/logo.png">
@@ -30,11 +27,7 @@
     <meta property="og:type" content="website">
 
     <link rel="icon" href="logo.png">
-
-    <!-- Canonical -->
     <link rel="canonical" href="https://club-de-finanzas-uach-pm.clubfinanzasuach.workers.dev/">
-
-    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Club de Finanzas UACh">
     <meta name="twitter:description" content="Formando criterio financiero desde el sur de Chile. Comunidad de estudiantes de Ingeniería Comercial.">
@@ -58,15 +51,7 @@
             300: '#B7C3D9',
             400: '#8FA0BE',
             500: '#9AA9C4',
-          },
-          amber: {
-            400: '#D2A44C',
-            500: '#C0902E',
-          },
-          teal: {
-            400: '#4FD1C5',
-            500: '#2FB6AA',
-          },
+          }
         },
         fontFamily: {
           sans: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -80,115 +65,110 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-
-<!-- AOS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<!-- Estilos propios del sitio -->
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-ink-950 text-mist-300 antialiased">
+<body class="bg-white text-slate-600 antialiased">
 
 <!-- ================= NAV ================= -->
-<header class="sticky top-0 z-50 bg-ink-950/85 backdrop-blur border-b border-ink-700">
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 shadow-sm">
   <nav class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <div class="h-10 w-10 rounded-2xl bg-ink-800 border border-ink-600 flex items-center justify-center p-1.5">
-        <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain rounded-2xl [mask-image:radial-gradient(ellipse_at_center,black_45%,transparent_100%)]">
+      <div class="h-10 w-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center p-1.5 shadow-sm">
+        <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full h-full object-contain">
       </div>
-      <span class="text-sm md:text-base font-semibold text-white tracking-tight">Club de Finanzas UACh</span>
+      <span class="text-sm md:text-base font-bold text-ink-950 tracking-tight">Club de Finanzas UACh</span>
     </div>
-    <button id="navtoggle" class="md:hidden text-white text-2xl leading-none p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinksMobile">&#9776;</button>
-    <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm">
-      <a href="#nosotros" class="text-mist-400 hover:text-white transition-colors">Nosotros</a>
-      <a href="#publicaciones" class="text-mist-400 hover:text-white transition-colors">Publicaciones</a>
-      <a href="#actividades" class="text-mist-400 hover:text-white transition-colors">Actividades</a>
-      <a href="#integrantes" class="text-mist-400 hover:text-white transition-colors">Directiva</a>
-      <a href="#contacto" class="text-mist-400 hover:text-white transition-colors">Contacto</a>
+    <button id="navtoggle" class="md:hidden text-ink-950 text-2xl leading-none p-2 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinksMobile">&#9776;</button>
+    <div id="navlinks" class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <a href="#nosotros" class="text-slate-500 hover:text-ink-900 transition-colors">Nosotros</a>
+      <a href="#publicaciones" class="text-slate-500 hover:text-ink-900 transition-colors">Publicaciones</a>
+      <a href="#actividades" class="text-slate-500 hover:text-ink-900 transition-colors">Actividades</a>
+      <a href="#integrantes" class="text-slate-500 hover:text-ink-900 transition-colors">Directiva</a>
+      <a href="#contacto" class="text-slate-500 hover:text-ink-900 transition-colors">Contacto</a>
     </div>
   </nav>
-  <div id="navlinksMobile" class="md:hidden hidden flex-col border-t border-ink-700">
-    <a href="#nosotros" class="px-6 py-3 border-b border-ink-700 text-mist-400">Nosotros</a>
-    <a href="#publicaciones" class="px-6 py-3 border-b border-ink-700 text-mist-400">Publicaciones</a>
-    <a href="#actividades" class="px-6 py-3 border-b border-ink-700 text-mist-400">Actividades</a>
-    <a href="#integrantes" class="px-6 py-3 border-b border-ink-700 text-mist-400">Directiva</a>
-    <a href="#contacto" class="px-6 py-3 text-mist-400">Contacto</a>
+  <div id="navlinksMobile" class="md:hidden hidden flex-col border-t border-slate-200 bg-white">
+    <a href="#nosotros" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Nosotros</a>
+    <a href="#publicaciones" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Publicaciones</a>
+    <a href="#actividades" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Actividades</a>
+    <a href="#integrantes" class="px-6 py-4 border-b border-slate-100 text-slate-600 font-medium">Directiva</a>
+    <a href="#contacto" class="px-6 py-4 text-slate-600 font-medium">Contacto</a>
   </div>
 </header>
 
 <main>
 
   <!-- ================= HERO ================= -->
-  <section class="relative overflow-hidden grid-lines">
-    <div class="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-950 to-ink-950"></div>
-    <svg class="absolute inset-0 w-full h-full opacity-20 num-plot" viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M10,220 L70,180 L130,200 L190,120 L250,150 L310,60 L390,20"></path>
+  <section class="relative overflow-hidden bg-slate-50">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-100 via-white to-white"></div>
+    <svg class="absolute inset-0 w-full h-full opacity-[0.03] text-ink-900" viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="none" stroke="currentColor" stroke-width="2" d="M10,220 L70,180 L130,200 L190,120 L250,150 L310,60 L390,20"></path>
     </svg>
 
     <div class="relative max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20 grid md:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
       <div>
-        <p class="text-sm text-mist-500 mb-5">Universidad Austral de Chile · Fundado el 4 de septiembre de 2026</p>
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-[1.05] max-w-xl">
+        <p class="text-sm text-blue-600 font-semibold tracking-wide uppercase mb-5">Universidad Austral de Chile</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-ink-950 leading-[1.05] max-w-xl">
           Formando criterio financiero desde el sur de Chile
         </h1>
-        <p class="mt-6 max-w-lg text-lg text-mist-400">
-          Comunidad de estudiantes de Ingeniería Comercial y carreras afines que aplica fundamentos de administración financiera, análisis de inversión y procesamiento estadístico de información a problemas reales de la región.
+        <p class="mt-6 max-w-lg text-lg text-slate-600 leading-relaxed">
+          Comunidad de estudiantes de Ingeniería Comercial y carreras afines que aplica fundamentos de administración financiera, análisis de inversión y procesamiento estadístico a problemas reales de la región.
         </p>
         <div class="mt-9 flex flex-wrap gap-4">
-          <a href="#publicaciones" class="inline-flex items-center px-6 py-3 rounded-md bg-teal-500 text-ink-950 font-semibold text-sm hover:bg-teal-400 transition-colors">Ver publicaciones</a>
-          <a href="#contacto" class="inline-flex items-center px-6 py-3 rounded-md border border-mist-500/40 text-white font-semibold text-sm hover:border-teal-400 hover:text-teal-400 transition-colors">Sumarme al club</a>
+          <a href="#publicaciones" class="inline-flex items-center px-6 py-3 rounded-md bg-ink-900 text-white font-semibold text-sm hover:bg-ink-800 transition-colors shadow-md">Ver publicaciones</a>
+          <a href="#contacto" class="inline-flex items-center px-6 py-3 rounded-md border border-slate-300 text-ink-900 font-semibold text-sm hover:border-ink-900 bg-white transition-colors">Sumarme al club</a>
         </div>
 
-        <div class="mt-14 pt-8 border-t border-ink-700 grid grid-cols-3 gap-6 max-w-md">
+        <div class="mt-14 pt-8 border-t border-slate-200 grid grid-cols-3 gap-6 max-w-md">
           <div>
-            <div class="font-mono-num text-3xl text-white" data-stat="miembros">—</div>
-            <div class="text-xs text-mist-500 mt-1">Miembros activos</div>
+            <div class="font-mono-num text-3xl font-bold text-ink-950" data-stat="miembros">—</div>
+            <div class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wide">Miembros</div>
           </div>
           <div>
-            <div class="font-mono-num text-3xl text-white" data-stat="actividades">—</div>
-            <div class="text-xs text-mist-500 mt-1">Actividades realizadas</div>
+            <div class="font-mono-num text-3xl font-bold text-ink-950" data-stat="actividades">—</div>
+            <div class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wide">Actividades</div>
           </div>
           <div>
-            <div class="font-mono-num text-3xl text-white" data-stat="fundacion">—</div>
-            <div class="text-xs text-mist-500 mt-1">Año de fundación</div>
+            <div class="font-mono-num text-3xl font-bold text-ink-950" data-stat="fundacion">—</div>
+            <div class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wide">Fundación</div>
           </div>
         </div>
       </div>
 
-      <div class="hidden md:flex justify-center">
-        <div class="glass rounded-xl p-10 w-full max-w-[280px] flex items-center justify-center">
-          <div class="rounded-3xl bg-ink-800/70 border border-ink-600 p-6 w-full flex items-center justify-center">
-            <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full max-w-[150px] rounded-3xl [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)]">
-          </div>
+      <div class="hidden md:flex justify-center relative">
+        <div class="absolute inset-0 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+        <div class="relative bg-white border border-slate-200 shadow-xl rounded-2xl p-10 w-full max-w-[320px] flex items-center justify-center">
+            <img src="logo.png" alt="Logo Club de Finanzas UACh" class="w-full max-w-[200px] object-contain">
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================= NOSOTROS ================= -->
-  <section id="nosotros" class="py-20 md:py-28 bg-ink-900 border-y border-ink-700">
+  <section id="nosotros" class="py-20 md:py-28 bg-white border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-baseline justify-between border-b border-ink-700 pb-6 mb-14" data-aos="fade-up">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Nosotros</h2>
+      <div class="flex items-baseline justify-between border-b border-slate-200 pb-6 mb-14" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Nosotros</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-14">
         <div data-aos="fade-up">
-          <p class="text-mist-400 mb-4 leading-relaxed">El Club de Finanzas UACh nace del interés de un grupo de estudiantes por profundizar en temas que van más allá de la sala de clases: mercados financieros, análisis de inversión, economía regional y gestión estratégica.</p>
-          <p class="text-mist-400 leading-relaxed">Creemos que la formación académica se complementa con espacios de discusión, investigación propia y contacto directo con profesionales de la industria — combinando principios teóricos sólidos con herramientas prácticas de procesamiento de datos.</p>
+          <p class="text-slate-600 mb-6 leading-relaxed text-lg">El Club de Finanzas UACh nace del interés de un grupo de estudiantes por profundizar en temas que van más allá de la sala de clases: mercados financieros, análisis de inversión, economía regional y gestión estratégica.</p>
+          <p class="text-slate-600 leading-relaxed text-lg">Creemos que la formación académica se complementa con espacios de discusión, investigación propia y contacto directo con profesionales de la industria — combinando principios teóricos sólidos con herramientas prácticas.</p>
         </div>
-        <div class="flex flex-col gap-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="border-l-2 border-teal-500 pl-5">
-            <h3 class="text-white font-semibold mb-1">Investigación</h3>
-            <p class="text-sm text-mist-500">Publicamos notas y análisis propios sobre mercados, empresas y coyuntura económica.</p>
+        <div class="flex flex-col gap-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Investigación</h3>
+            <p class="text-slate-600">Publicamos notas y análisis propios sobre mercados, empresas y coyuntura económica.</p>
           </div>
-          <div class="border-l-2 border-teal-500 pl-5">
-            <h3 class="text-white font-semibold mb-1">Comunidad</h3>
-            <p class="text-sm text-mist-500">Espacios de debate y aprendizaje entre estudiantes de distintos niveles.</p>
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Comunidad</h3>
+            <p class="text-slate-600">Espacios de debate y aprendizaje continuo entre estudiantes de distintos niveles.</p>
           </div>
-          <div class="border-l-2 border-teal-500 pl-5">
-            <h3 class="text-white font-semibold mb-1">Vínculo con la industria</h3>
-            <p class="text-sm text-mist-500">Charlas, visitas y contacto con profesionales del área financiera.</p>
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Vínculo con la industria</h3>
+            <p class="text-slate-600">Charlas, visitas y contacto con profesionales consolidados del área financiera.</p>
           </div>
         </div>
       </div>
@@ -196,11 +176,11 @@
   </section>
 
   <!-- ================= PUBLICACIONES ================= -->
-  <section id="publicaciones" class="py-20 md:py-28">
+  <section id="publicaciones" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-ink-700 pb-6 mb-12" data-aos="fade-up">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Publicaciones</h2>
-        <p class="text-sm text-mist-500 max-w-xs text-right">Notas, investigaciones y resúmenes escritos por el club.</p>
+      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-slate-200 pb-6 mb-12" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Publicaciones</h2>
+        <p class="text-sm font-medium text-slate-500 max-w-xs text-right">Notas, investigaciones y resúmenes escritos por el club.</p>
       </div>
 
       <div class="flex gap-3 flex-wrap mb-10" id="filters"></div>
@@ -209,36 +189,36 @@
   </section>
 
   <!-- ================= ACTIVIDADES ================= -->
-  <section id="actividades" class="py-20 md:py-28 bg-ink-900 border-y border-ink-700">
+  <section id="actividades" class="py-20 md:py-28 bg-white border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-ink-700 pb-6 mb-14" data-aos="fade-up">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Actividades</h2>
-        <p class="text-sm text-mist-500 max-w-xs text-right">Charlas, visitas y eventos que hemos realizado.</p>
+      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-slate-200 pb-6 mb-14" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Actividades</h2>
+        <p class="text-sm font-medium text-slate-500 max-w-xs text-right">Charlas, visitas y eventos que hemos realizado.</p>
       </div>
-      <div class="relative border-l border-ink-700 ml-2" id="timeline"></div>
+      <div class="relative border-l-2 border-slate-200 ml-2" id="timeline"></div>
     </div>
   </section>
 
   <!-- ================= INTEGRANTES ================= -->
-  <section id="integrantes" class="py-20 md:py-28">
+  <section id="integrantes" class="py-20 md:py-28 bg-slate-50 border-t border-slate-200">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="border-b border-ink-700 pb-6 mb-14" data-aos="fade-up">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">Directiva</h2>
-        <p class="text-sm text-mist-500 mt-2 max-w-md">El equipo que lidera esta etapa fundacional del club.</p>
+      <div class="border-b border-slate-200 pb-6 mb-14" data-aos="fade-up">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Directiva</h2>
+        <p class="text-sm font-medium text-slate-500 mt-2 max-w-md">El equipo que lidera esta etapa fundacional del club.</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="teamGrid"></div>
     </div>
   </section>
 
   <!-- ================= ESTATUTOS (CTA) ================= -->
-  <section class="py-14 bg-ink-900 border-y border-ink-700" data-aos="fade-up">
+  <section class="py-16 bg-blue-600" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
       <div class="max-w-xl text-center md:text-left">
-        <h3 class="text-xl md:text-2xl font-bold text-white mb-2">Transparencia y normativa del club</h3>
-        <p class="text-mist-400 text-sm md:text-base leading-relaxed">Nuestro funcionamiento se rige por estatutos internos que definen roles, protocolos y el plan de trabajo de la directiva. Puedes revisarlos en cualquier momento.</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white mb-3">Transparencia y normativa del club</h3>
+        <p class="text-blue-100 text-sm md:text-base leading-relaxed">Nuestro funcionamiento se rige por estatutos internos que definen roles, protocolos y el plan de trabajo de la directiva. Puedes revisarlos en cualquier momento.</p>
       </div>
       <a href="estatutos.pdf" target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center px-8 py-4 rounded-md bg-teal-500 text-ink-950 font-bold text-sm md:text-base hover:bg-teal-400 transition-colors whitespace-nowrap">
+         class="inline-flex items-center justify-center px-8 py-4 rounded-md bg-white text-blue-700 font-bold text-sm md:text-base hover:bg-slate-50 transition-colors whitespace-nowrap shadow-lg">
         Leer Estatutos del Club
       </a>
     </div>
@@ -246,45 +226,42 @@
 
 </main>
 
-<!-- ================= LIGHTBOX (placeholder) ================= -->
-<div id="lightbox" class="hidden fixed inset-0 z-[60] bg-ink-950/90 backdrop-blur items-center justify-center p-6" onclick="closeLightbox()">
-  <div class="glass rounded-xl p-8 max-w-sm w-full text-center">
-    <div id="lightboxInitials" class="mx-auto mb-4 w-20 h-20 rounded-lg bg-ink-700 flex items-center justify-center text-teal-400 font-mono-num text-2xl"></div>
-    <h3 id="lightboxNombre" class="text-white font-semibold text-lg"></h3>
-    <p id="lightboxCargo" class="text-teal-400 text-sm mt-1"></p>
-    <p class="text-mist-500 text-xs mt-4">Foto corporativa próximamente</p>
+<!-- ================= LIGHTBOX ================= -->
+<div id="lightbox" class="hidden fixed inset-0 z-[60] bg-ink-950/80 backdrop-blur-sm items-center justify-center p-6" onclick="closeLightbox()">
+  <div class="bg-white rounded-xl p-8 max-w-sm w-full text-center shadow-2xl">
+    <div id="lightboxInitials" class="mx-auto mb-4 w-20 h-20 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-blue-600 font-bold text-2xl"></div>
+    <h3 id="lightboxNombre" class="text-ink-950 font-bold text-xl"></h3>
+    <p id="lightboxCargo" class="text-blue-600 font-medium text-sm mt-1"></p>
+    <p class="text-slate-500 text-xs mt-6 bg-slate-50 p-2 rounded">Foto corporativa próximamente</p>
   </div>
 </div>
 
 <!-- ================= CONTACTO / FOOTER ================= -->
-<footer id="contacto" class="bg-ink-900 border-t border-ink-700 pt-16 pb-8">
+<footer id="contacto" class="bg-ink-950 pt-16 pb-8">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-2xl md:text-3xl font-bold text-white">Conversemos</h2>
     <div class="mt-10 grid md:grid-cols-3 gap-10">
       <div>
-        <p class="text-mist-400 text-sm leading-relaxed">¿Te interesa el mundo financiero? Súmate al club, propón una nota o invítanos a colaborar.</p>
+        <p class="text-slate-400 text-sm leading-relaxed">¿Te interesa el mundo financiero? Súmate al club, propón una nota o invítanos a colaborar.</p>
       </div>
       <div>
-        <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Contacto</h4>
-        <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
-        <a class="block text-sm text-mist-300 hover:text-teal-400 mb-2.5 transition-colors" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
-        <a class="flex items-center gap-2 text-sm text-mist-300 hover:text-teal-400 transition-colors"
-           href="https://www.linkedin.com/company/club-de-finanzas-uach/"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Perfil de LinkedIn del Club de Finanzas UACh">
-          <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+        <h4 class="text-xs font-bold text-slate-500 mb-4 tracking-wider uppercase">Contacto</h4>
+        <a class="block text-sm text-slate-300 hover:text-white mb-2.5 transition-colors" href="mailto:clubfinanzas.pm@uach.cl">clubfinanzas.pm@uach.cl</a>
+        <a class="block text-sm text-slate-300 hover:text-white mb-2.5 transition-colors" href="https://www.instagram.com/clubfinanzasuach/" target="_blank" rel="noopener">@clubfinanzasuach</a>
+        <a class="flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors"
+           href="https://www.linkedin.com/company/club-de-finanzas-uach/" target="_blank" rel="noopener noreferrer">
+          <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/>
           </svg>
           <span>LinkedIn</span>
         </a>
       </div>
       <div>
-        <h4 class="text-xs font-semibold text-mist-500 mb-4 tracking-wide">Sede</h4>
-        <p class="text-sm text-mist-400 leading-relaxed">Universidad Austral de Chile<br>Campus Puerto Montt</p>
+        <h4 class="text-xs font-bold text-slate-500 mb-4 tracking-wider uppercase">Sede</h4>
+        <p class="text-sm text-slate-400 leading-relaxed">Universidad Austral de Chile<br>Campus Puerto Montt</p>
       </div>
     </div>
-    <div class="mt-14 pt-6 border-t border-ink-700 flex flex-wrap justify-between gap-2 text-xs text-mist-500">
+    <div class="mt-14 pt-6 border-t border-ink-800 flex flex-wrap justify-between gap-2 text-xs text-slate-500">
       <span>© <span id="year"></span> Club de Finanzas UACh</span>
       <span>Sitio hecho por y para el club</span>
     </div>
@@ -293,21 +270,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 <script>
-/* ============================================================
-   CONTENIDO DEL SITIO
-   Edita SOLO esta sección para actualizar el sitio: no necesitas
-   tocar el HTML/CSS de arriba. Guarda el archivo y listo.
-   ============================================================ */
+const CLUB = { miembros: 10, actividadesRealizadas: 1, anioFundacion: 2026 };
 
-const CLUB = {
-  miembros: 10,
-  actividadesRealizadas: 1,
-  anioFundacion: 2026
-};
-
-// Cada publicación: { fecha, categoria, titulo, portada, extracto, url (página HTML de la nota completa), resumen (HTML, contenido de esa página), imagenes }
 const PUBLICACIONES = [
-    {
+  {
     fecha: "2026-09-07",
     categoria: "Comunicado",
     titulo: "Próxima Sesión: Fundamentos de Inversión, Mercado de Capitales y Costos para PYMES",
@@ -323,8 +289,8 @@ const PUBLICACIONES = [
     titulo: "Charla de Empleabilidad AquaChile",
     portada: "charlaempleabilidad.jpeg",
     url: "charla-empleabilidad-aquachile.html",
-    extracto: "AquaChile invita a estudiantes a conocer la industria salmonera y a prepararse para sus primeros procesos de selección laboral, en la UACh sede Puerto Montt.",
-    resumen: ``,
+    extracto: "AquaChile invita a estudiantes a conocer la industria salmonera y a prepararse para sus primeros procesos de selección laboral.",
+    resumen: "",
     imagenes: []
   },
   {
@@ -333,55 +299,30 @@ const PUBLICACIONES = [
     titulo: "Invitación Biotech Week Puerto Varas 2026",
     portada: "Biotech.png",
     url: "actividad-biotech-2026.html",
-    extracto: "Encuentro de innovación, emprendimiento y biotecnología. La UACh participa como partner con actividades exclusivas y transporte para estudiantes.",
-    resumen: `<p>Cobertura completa disponible en la página de la actividad.</p>`,
+    extracto: "Encuentro de innovación, emprendimiento y biotecnología. La UACh participa como partner con actividades exclusivas.",
+    resumen: "",
     imagenes: []
   },
   {
     fecha: "2026-09-04",
     categoria: "Comunicado",
-    titulo: "Constitución oficial del Club de Finanzas UACh: un nuevo espacio para el desarrollo económico y estudiantil en la Región de Los Lagos",
+    titulo: "Constitución oficial del Club de Finanzas UACh",
     portada: "actividad-portada.jpg",
     url: "publicacion-1.html",
-    extracto: "La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.",
-    resumen: `
-      <p class="italic"><em>La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera, la investigación y el liderazgo en la zona sur.</em></p>
-      <p>El pasado viernes 4 de septiembre de 2026 se llevó a cabo la sesión inaugural que dio inicio oficial a las actividades del Club de Finanzas de la Universidad Austral de Chile. La jornada, que contó con una asistencia inicial de 12 estudiantes comprometidos con el área económica y financiera, sirvió como primera mesa de trabajo para delinear el futuro de esta nueva organización académica.</p>
-      <p>Durante este primer encuentro se establecieron los acuerdos fundamentales, los protocolos de acción y el plan de trabajo estratégico que guiará el crecimiento y la formación continua del club. Asimismo, se fijaron los estatutos operativos, los cuales sentarán las bases para el funcionamiento transparente y estructurado de la agrupación.</p>
-      <p>Para liderar esta etapa fundacional y ejecutar los objetivos trazados, se designó a la directiva oficial, compuesta íntegramente por estudiantes de tercer año de la carrera de Ingeniería Comercial:</p>
-      <ul>
-        <li>Presidente: Enzo Solano</li>
-        <li>Vicepresidente: Martín Márquez</li>
-        <li>Director de Secretaría: Alonso Letelier</li>
-        <li>Director de Comunicación: Heber Levitureo</li>
-        <li>Director de Vinculación: Diego Vargas</li>
-      </ul>
-      <p><strong>Visión y compromiso con el entorno empresarial</strong></p>
-      <p>El Club de Finanzas UACh nace de la necesidad de materializar las inquietudes académicas de un grupo de estudiantes orientados a generar un impacto positivo y cuantificable en la comunidad universitaria y su entorno. El plan de acción contempla la organización de conversatorios, charlas magistrales, investigaciones aplicadas y visitas a empresas, buscando crear un puente directo entre el talento universitario y el mundo corporativo.</p>
-      <p>Como organización, sostenemos la firme convicción de que esta iniciativa generará un valor real que trascenderá las aulas. Nuestra visión a largo plazo es consolidarnos como líderes y referentes en la Región de Los Lagos dentro del área financiera y económica, contribuyendo activamente al desarrollo de las aptitudes técnicas, analíticas y de liderazgo de los futuros profesionales del sur de Chile.</p>
-      <p>Invitamos a la comunidad estudiantil, docentes y empresas del sector a seguir de cerca nuestras futuras iniciativas.</p>
-    `,
-    imagenes: [
-      "actividad-1.jpg",
-      "actividad-2.jpg",
-      "actividad-3.jpg",
-      "actividad-4.jpg",
-      "actividad-5.jpg",
-      "actividad-6.jpg"
-    ]
+    extracto: "La iniciativa busca estrechar lazos entre la comunidad universitaria y el sector empresarial, promoviendo la educación financiera.",
+    resumen: "",
+    imagenes: []
   }
 ];
 
-// Cada actividad: { fecha, titulo, descripcion }
 const ACTIVIDADES = [
   {
     fecha: "4 de septiembre de 2026",
-    titulo: "Fundación del club y lanzamiento oficial del sitio web",
+    titulo: "Fundación del club y lanzamiento oficial",
     descripcion: "Primera actividad del Club de Finanzas UACh: presentación del club al público y estreno de esta página web."
   }
 ];
 
-// Cada integrante: { nombre, cargo, foto (opcional, ruta de imagen para futuro reemplazo) }
 const DIRECTIVA = [
   { nombre: "Enzo Solano", cargo: "Presidente" },
   { nombre: "Martín Márquez", cargo: "Vicepresidente" },
@@ -389,10 +330,6 @@ const DIRECTIVA = [
   { nombre: "Alonso Letelier", cargo: "Director de Secretaría" },
   { nombre: "Diego Vargas", cargo: "Director de Vinculación" }
 ];
-
-/* ============================================================
-   No es necesario editar debajo de esta línea
-   ============================================================ */
 
 document.getElementById('year').textContent = new Date().getFullYear();
 document.querySelector('[data-stat="miembros"]').textContent = CLUB.miembros + "+";
@@ -406,7 +343,6 @@ function fmtFecha(iso){
   }catch(e){ return iso; }
 }
 
-// Publicaciones + filtros
 const pubList = document.getElementById('pubList');
 const filtersEl = document.getElementById('filters');
 const categorias = ["Todas", ...new Set(PUBLICACIONES.map(p => p.categoria))];
@@ -418,33 +354,33 @@ function renderPubs(filtro){
     .filter(p => filtro === "Todas" || p.categoria === filtro);
 
   if(items.length === 0){
-    pubList.innerHTML = '<p class="text-mist-500 py-10 text-lg col-span-full">Próximamente</p>';
+    pubList.innerHTML = '<p class="text-slate-500 py-10 text-lg col-span-full">Próximamente</p>';
     return;
   }
 
   items.forEach((p) => {
     const realIndex = PUBLICACIONES.indexOf(p);
     const el = document.createElement('article');
-    el.className = 'glass rounded-lg overflow-hidden flex flex-col';
+    el.className = 'bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow rounded-xl overflow-hidden flex flex-col';
     el.setAttribute('data-aos', 'fade-up');
     el.setAttribute('data-aos-delay', String((realIndex % 3) * 80));
 
     const portadaHtml = p.portada
-      ? `<img class="w-full aspect-video object-cover" src="${p.portada}" alt="${p.titulo}">`
-      : `<div class="w-full aspect-video bg-ink-800"></div>`;
+      ? `<img class="w-full aspect-video object-cover border-b border-slate-100" src="${p.portada}" alt="${p.titulo}">`
+      : `<div class="w-full aspect-video bg-slate-100 border-b border-slate-100"></div>`;
 
     el.innerHTML = `
       ${portadaHtml}
       <div class="p-6 flex flex-col flex-1">
-        <div class="flex items-center gap-3 text-xs text-mist-500 mb-3">
+        <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium tracking-wide">
           <span class="font-mono-num">${fmtFecha(p.fecha)}</span>
-          <span class="w-1 h-1 rounded-full bg-mist-500"></span>
-          <span class="text-teal-400 font-semibold">${p.categoria}</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+          <span class="text-blue-600 font-bold uppercase">${p.categoria}</span>
         </div>
-        <h3 class="text-lg font-bold text-white leading-snug mb-3">${p.titulo}</h3>
-        <p class="text-sm text-mist-400 leading-relaxed line-clamp-2 flex-1">${p.extracto}</p>
+        <h3 class="text-lg font-bold text-ink-950 leading-snug mb-3">${p.titulo}</h3>
+        <p class="text-sm text-slate-600 leading-relaxed line-clamp-3 flex-1">${p.extracto}</p>
         <a href="${p.url || '#'}"
-          class="mt-5 inline-flex items-center justify-center px-5 py-2.5 rounded-md border border-teal-500/50 text-teal-400 text-sm font-semibold hover:bg-teal-500 hover:text-ink-950 transition-colors">
+          class="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-slate-50 border border-slate-200 text-ink-900 text-sm font-bold hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-colors">
           Ver nota completa
         </a>
       </div>
@@ -455,15 +391,15 @@ function renderPubs(filtro){
 
 categorias.forEach(cat => {
   const btn = document.createElement('button');
-  btn.className = 'text-sm px-4 py-1.5 rounded-full border transition-colors ' +
-    (cat === "Todas" ? 'bg-teal-500 border-teal-500 text-ink-950 font-semibold' : 'border-ink-700 text-mist-400 hover:border-teal-400 hover:text-teal-400');
+  btn.className = 'text-sm px-5 py-2 rounded-full border transition-colors font-medium shadow-sm ' +
+    (cat === "Todas" ? 'bg-ink-900 border-ink-900 text-white' : 'bg-white border-slate-200 text-slate-600 hover:border-ink-900 hover:text-ink-900');
   btn.dataset.cat = cat;
   btn.textContent = cat;
   btn.onclick = () => {
     filtersEl.querySelectorAll('button').forEach(b => {
-      b.className = 'text-sm px-4 py-1.5 rounded-full border transition-colors border-ink-700 text-mist-400 hover:border-teal-400 hover:text-teal-400';
+      b.className = 'text-sm px-5 py-2 rounded-full border transition-colors font-medium shadow-sm bg-white border-slate-200 text-slate-600 hover:border-ink-900 hover:text-ink-900';
     });
-    btn.className = 'text-sm px-4 py-1.5 rounded-full border transition-colors bg-teal-500 border-teal-500 text-ink-950 font-semibold';
+    btn.className = 'text-sm px-5 py-2 rounded-full border transition-colors font-medium shadow-sm bg-ink-900 border-ink-900 text-white';
     renderPubs(cat);
   };
   filtersEl.appendChild(btn);
@@ -471,24 +407,21 @@ categorias.forEach(cat => {
 if(PUBLICACIONES.length === 0){ filtersEl.style.display = 'none'; }
 renderPubs("Todas");
 
-// Actividades
 const timeline = document.getElementById('timeline');
 ACTIVIDADES.forEach((a, i) => {
   const el = document.createElement('div');
-  el.className = 'relative pl-9 pb-10';
+  el.className = 'relative pl-8 pb-10';
   el.setAttribute('data-aos', 'fade-up');
   el.setAttribute('data-aos-delay', String((i % 3) * 80));
   el.innerHTML = `
-    <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-teal-500 ring-4 ring-ink-900"></span>
-    <div class="font-mono-num text-xs text-teal-400 mb-2">${a.fecha}</div>
-    <h3 class="text-lg font-bold text-white mb-2">${a.titulo}</h3>
-    <p class="text-sm text-mist-400 max-w-xl leading-relaxed">${a.descripcion}</p>
+    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-white shadow-sm"></span>
+    <div class="font-mono-num text-sm font-semibold text-blue-600 mb-2">${a.fecha}</div>
+    <h3 class="text-xl font-bold text-ink-950 mb-2">${a.titulo}</h3>
+    <p class="text-base text-slate-600 max-w-2xl leading-relaxed">${a.descripcion}</p>
   `;
   timeline.appendChild(el);
 });
 
-// Directiva — la tarjeta completa actúa como botón; por ahora abre un lightbox
-// placeholder (sin foto real) hasta que se agreguen fotografías corporativas.
 function openLightbox(nombre, cargo, initials){
   document.getElementById('lightboxInitials').textContent = initials;
   document.getElementById('lightboxNombre').textContent = nombre;
@@ -508,25 +441,24 @@ DIRECTIVA.forEach((m, i) => {
   const initials = m.nombre.split(" ").map(w => w[0]).slice(0,2).join("");
   const el = document.createElement('button');
   el.type = 'button';
-  el.className = 'glass rounded-xl overflow-hidden text-left group transition-transform duration-300 hover:scale-[1.03]';
+  el.className = 'bg-white border border-slate-200 shadow-sm rounded-xl overflow-hidden text-left group transition-all duration-300 hover:shadow-md hover:-translate-y-1';
   el.setAttribute('data-aos', 'fade-up');
   el.setAttribute('data-aos-delay', String((i % 3) * 80));
   el.onclick = () => openLightbox(m.nombre, m.cargo, initials);
   el.innerHTML = `
-    <div class="w-full aspect-square bg-ink-800 flex items-center justify-center overflow-hidden">
+    <div class="w-full aspect-square bg-slate-50 flex items-center justify-center overflow-hidden border-b border-slate-100">
       ${m.foto
         ? `<img src="${m.foto}" alt="${m.nombre}" class="w-full h-full object-cover">`
-        : `<span class="font-mono-num text-5xl text-teal-400">${initials}</span>`}
+        : `<span class="font-mono-num font-bold text-5xl text-slate-300 group-hover:text-blue-600 transition-colors">${initials}</span>`}
     </div>
-    <div class="p-5">
-      <h3 class="text-white font-semibold text-base">${m.nombre}</h3>
-      <div class="text-sm text-teal-400 mt-1">${m.cargo}</div>
+    <div class="p-6">
+      <h3 class="text-ink-950 font-bold text-lg">${m.nombre}</h3>
+      <div class="text-sm font-semibold text-blue-600 mt-1">${m.cargo}</div>
     </div>
   `;
   teamGrid.appendChild(el);
 });
 
-// Menú móvil
 const navtoggle = document.getElementById('navtoggle');
 const navlinksMobile = document.getElementById('navlinksMobile');
 
