@@ -8,6 +8,9 @@ on:
     # Una vez al día el fin de semana (bitcoin sigue transando)
     - cron: '7 14 * * 0,6'
   workflow_dispatch:
+  # Temporal: prueba desde la rama antes de pasar a main
+  push:
+    branches: [indicadores-financieros]
 
 permissions:
   contents: write
