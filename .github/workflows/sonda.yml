@@ -8,5 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          curl -sS -m 20 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "https://query2.finance.yahoo.com/v8/finance/chart/MXIPSAPC.SN?range=10d&interval=1d" | head -c 1500; echo
-          node scripts/actualizar-indicadores.mjs salida && head -12 salida/indicadores.json
+          curl -sS -m 20 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "https://query2.finance.yahoo.com/v8/finance/chart/MXIPSAGC.SN?range=10d&interval=1d" | head -c 700; echo
