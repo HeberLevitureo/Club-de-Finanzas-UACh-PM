@@ -12,7 +12,7 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 // Para sumar un indicador basta agregar una línea con su símbolo de Yahoo Finance
 // (y, si existe, su símbolo de CNBC como fuente de respaldo).
 const SIMBOLOS = [
-  { id: 'ipsa',    simbolo: '^IPSA',   nombre: 'IPSA',         decimales: 2 },
+  { id: 'ipsa',    simbolo: 'MXIPSAPC.SN', nombre: 'IPSA',        decimales: 2 },
   { id: 'sp500',   simbolo: '^GSPC',   cnbc: '.SPX', nombre: 'S&P 500',      decimales: 2 },
   { id: 'nasdaq',  simbolo: '^IXIC',   cnbc: '.IXIC', nombre: 'Nasdaq',       decimales: 2 },
   { id: 'dow',     simbolo: '^DJI',    cnbc: '.DJI', nombre: 'Dow Jones',    decimales: 2 },
