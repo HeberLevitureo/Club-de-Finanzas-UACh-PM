@@ -6,18 +6,8 @@ jobs:
   sonda:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
-          p(){ echo "=== $1"; curl -sS -m 20 -L -A "$UA" -w '\n[HTTP %{http_code}]\n' "$1" | tail -c 500; echo; }
-          p 'https://stooq.com/q/l/?s=%5Eipsa+%5Espx+%5Endq+%5Edji+cl.f+cb.f+gc.f+hg.f+btcusd&f=sd2t2ohlcvp&h&e=csv'
-          p 'https://stooq.com/q/d/l/?s=%5Espx&i=d'
-          p 'https://stooq.com/q/d/l/?s=%5Eipsa&i=d'
-          p 'https://query2.finance.yahoo.com/v8/finance/chart/%5EGSPC?range=5d&interval=1d'
-          p 'https://query1.finance.yahoo.com/v7/finance/spark?symbols=%5EGSPC,%5EIPSA&range=5d&interval=1d'
-          p 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-09-20'
-          p 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO&cosd=2026-09-10'
-          p 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true'
-          p 'https://api.coinbase.com/v2/prices/BTC-USD/spot'
-          p 'https://www.google.com/finance/quote/IPSA:INDEXBCS' | grep -o 'data-last-price="[^"]*"' | head -2
-          echo "=== cnbc"; curl -sS -m 20 -A "$UA" 'https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols=.SPX%7C.IXIC%7C.DJI%7C%40CL.1%7C%40LCO.1%7C%40GC.1%7C%40HG.1%7CBTC.CM%3D&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json' | python3 -c "import sys,json;[print(q.get('symbol'),q.get('name'),q.get('last'),q.get('change_pct'),q.get('previous_day_closing'),q.get('last_time')) for q in json.load(sys.stdin)['FormattedQuoteResult']['FormattedQuote']]"
-          echo "=== cnbc ipsa"; curl -sS -m 20 -A "$UA" 'https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol?symbols=.IPSA%7C.SPIPSA%7CCLP%3D&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json' | head -c 900
+      - uses: actions/checkout@v4
+      - name: Prueba normal
+        run: node scripts/actualizar-indicadores.mjs salida && cat salida/indicadores.json
+      - name: Prueba forzando el respaldo
+        run: SIMULAR_FALLA_YAHOO=1 node scripts/actualizar-indicadores.mjs salida2 && cat salida2/indicadores.json
