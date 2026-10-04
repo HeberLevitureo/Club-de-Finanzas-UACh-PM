@@ -12,7 +12,8 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 // Para sumar un indicador basta agregar una línea con su símbolo de Yahoo Finance
 // (y, si existe, su símbolo de CNBC como fuente de respaldo).
 const SIMBOLOS = [
-  { id: 'ipsa',    simbolo: 'MXIPSAPC.SN', nombre: 'IPSA',        decimales: 2 },
+  // MSCI IPSA: el mismo índice (y valor) que publica la Bolsa de Santiago
+  { id: 'ipsa',    simbolo: 'MXIPSAGC.SN', nombre: 'MSCI IPSA', decimales: 2 },
   { id: 'sp500',   simbolo: '^GSPC',   cnbc: '.SPX', nombre: 'S&P 500',      decimales: 2 },
   { id: 'nasdaq',  simbolo: '^IXIC',   cnbc: '.IXIC', nombre: 'Nasdaq',       decimales: 2 },
   { id: 'dow',     simbolo: '^DJI',    cnbc: '.DJI', nombre: 'Dow Jones',    decimales: 2 },
@@ -43,6 +44,8 @@ export function interpretar(json) {
   const valor = meta.regularMarketPrice;
   const item = { valor, fecha: new Date(meta.regularMarketTime * 1000).toISOString() };
   if (anterior) item.variacion = Math.round(((valor - anterior) / anterior) * 10000) / 100;
+  // Algunos índices no traen historial diario: se usa la variación que informa la propia fuente.
+  else if (typeof meta.regularMarketChangePercent === 'number') item.variacion = Math.round(meta.regularMarketChangePercent * 100) / 100;
   return item;
 }
 
