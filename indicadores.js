@@ -67,7 +67,8 @@
   function fechaCorta(iso) {
     var d = new Date(iso);
     if (isNaN(d)) return '';
-    return d.toLocaleDateString('es-CL', { day: 'numeric', month: 'short', year: 'numeric' });
+    // Siempre en hora de Chile: así la fecha no cambia según la zona horaria del visitante
+    return d.toLocaleDateString('es-CL', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'America/Santiago' });
   }
 
   function leerCache() {
