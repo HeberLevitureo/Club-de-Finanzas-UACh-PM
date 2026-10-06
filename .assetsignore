@@ -1,0 +1,9 @@
+# Archivos del repositorio que no son parte del sitio público
+.git
+.github
+.assetsignore
+.wrangler
+node_modules
+scripts
+worker
+wrangler.jsonc

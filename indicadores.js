@@ -6,14 +6,16 @@
    Fuentes:
    - UF, dólar observado, euro, UTM, TPM  -> mindicador.cl (en el navegador)
    - IPSA, S&P 500, Nasdaq, Dow Jones, petróleo, cobre, oro, bitcoin
-     -> indicadores.json en la rama "datos" del repositorio, que
-        actualiza la GitHub Action .github/workflows/indicadores.yml
+     -> /api/indicadores (Worker de Cloudflare, worker/index.js), que los
+        descarga de Yahoo Finance con CNBC de respaldo. Si no responde, se
+        usa indicadores.json de la rama "datos" (GitHub Action).
    ============================================================ */
 (function () {
   'use strict';
 
   var CONFIG = {
-    mercadosUrl: 'https://raw.githubusercontent.com/HeberLevitureo/Club-de-Finanzas-UACh-PM/datos/indicadores.json',
+    mercadosUrl: '/api/indicadores',   // Worker de Cloudflare del propio sitio
+    respaldoUrl: 'https://raw.githubusercontent.com/HeberLevitureo/Club-de-Finanzas-UACh-PM/datos/indicadores.json',
     chileUrl: 'https://mindicador.cl/api',
     fijo: false,          // true = la barra queda pegada al menú al hacer scroll
     refrescoMin: 15,      // cada cuántos minutos vuelve a consultar los datos
@@ -165,7 +167,7 @@
     var demo = window.CFU_INDICADORES_DEMO; // datos fijos para vistas previas
     var tareas = demo
       ? [Promise.resolve(demo.chile), Promise.resolve(demo.mercados)]
-      : [pedir(CONFIG.chileUrl), pedir(CONFIG.mercadosUrl)];
+      : [pedir(CONFIG.chileUrl), pedir(CONFIG.mercadosUrl).catch(function () { return pedir(CONFIG.respaldoUrl); })];
 
     return Promise.allSettled(tareas).then(function (res) {
       if (res[0].status === 'fulfilled' && res[0].value) datosChile = res[0].value;

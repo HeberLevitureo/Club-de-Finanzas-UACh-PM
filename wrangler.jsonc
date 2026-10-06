@@ -1,0 +1,15 @@
+{
+  // Configuración de Cloudflare para el sitio del Club de Finanzas UACh.
+  // El sitio sigue siendo estático; el Worker solo responde /api/indicadores.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "club-de-finanzas-uach-pm",
+  "compatibility_date": "2026-10-01",
+  "main": "worker/index.js",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  }
+}
