@@ -8,6 +8,10 @@ const CABECERAS = { 'User-Agent': UA, Accept: 'application/json' };
 // Para sumar un indicador basta agregar una línea con su símbolo de Yahoo Finance
 // (y, si existe, su símbolo de CNBC como fuente de respaldo).
 export const SIMBOLOS = [
+  // Tipo de cambio de mercado (spot), distinto del dólar observado del Banco Central.
+  // Sin variación: el historial diario de divisas de las fuentes no es consistente.
+  { id: 'dolar',   simbolo: 'CLP=X',    cnbc: 'CLP=', nombre: 'Dólar', decimales: 2, prefijo: '$ ', sinVariacion: true },
+  { id: 'euro',    simbolo: 'EURCLP=X', nombre: 'Euro',  decimales: 2, prefijo: '$ ', sinVariacion: true },
   // MSCI IPSA: el mismo índice (y valor) que publica la Bolsa de Santiago
   { id: 'ipsa',    simbolo: 'MXIPSAGC.SN', nombre: 'MSCI IPSA', decimales: 2 },
   { id: 'sp500',   simbolo: '^GSPC',   cnbc: '.SPX',    nombre: 'S&P 500',      decimales: 2 },
@@ -103,6 +107,7 @@ export async function obtenerIndicadores({ leerAnteriores, simularFallaYahoo = f
   for (let i = 0; i < SIMBOLOS.length; i++) {
     const s = SIMBOLOS[i];
     const base = { id: s.id, nombre: s.nombre, decimales: s.decimales, prefijo: s.prefijo, sufijo: s.sufijo };
+    if (s.sinVariacion) { if (yahoo[i]) delete yahoo[i].variacion; if (cnbc[s.cnbc]) delete cnbc[s.cnbc].variacion; }
     if (yahoo[i]) { items.push({ ...base, ...yahoo[i], fuente: 'Yahoo Finance' }); nuevos++; continue; }
     if (s.cnbc && cnbc[s.cnbc]) { items.push({ ...base, ...cnbc[s.cnbc], fuente: 'CNBC' }); nuevos++; continue; }
     if (anteriores === null) anteriores = leerAnteriores ? await leerAnteriores().catch(() => []) : [];

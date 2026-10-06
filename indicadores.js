@@ -4,8 +4,8 @@
    cargue este archivo con una etiqueta script (src="indicadores.js", defer).
 
    Fuentes:
-   - UF, dólar observado, euro, UTM, TPM  -> mindicador.cl (en el navegador)
-   - IPSA, S&P 500, Nasdaq, Dow Jones, petróleo, cobre, oro, bitcoin
+   - UF, dólar observado, UTM, TPM  -> mindicador.cl (en el navegador)
+   - Dólar y euro de mercado, IPSA, S&P 500, Nasdaq, Dow Jones, petróleo, cobre, oro, bitcoin
      -> /api/indicadores (Worker de Cloudflare, worker/index.js), que los
         descarga de Yahoo Finance con CNBC de respaldo. Si no responde, se
         usa indicadores.json de la rama "datos" (GitHub Action).
@@ -20,14 +20,16 @@
     fijo: false,          // true = la barra queda pegada al menú al hacer scroll
     refrescoMin: 15,      // cada cuántos minutos vuelve a consultar los datos
     pxPorSegundo: 45,     // velocidad de la rotación
-    orden: ['uf', 'dolar', 'euro', 'ipsa', 'sp500', 'nasdaq', 'dow', 'cobre', 'wti', 'brent', 'oro', 'bitcoin', 'tpm', 'utm']
+    orden: ['uf', 'dolar', 'dolar_obs', 'euro', 'ipsa', 'sp500', 'nasdaq', 'dow', 'cobre', 'wti', 'brent', 'oro', 'bitcoin', 'tpm', 'utm']
   };
 
   // Indicadores que se leen de mindicador.cl
   var CHILE = [
     { id: 'uf',    clave: 'uf',          nombre: 'UF',    prefijo: '$ ', decimales: 2 },
-    { id: 'dolar', clave: 'dolar',       nombre: 'Dólar', prefijo: '$ ', decimales: 2 },
-    { id: 'euro',  clave: 'euro',        nombre: 'Euro',  prefijo: '$ ', decimales: 2 },
+    // Valor oficial del Banco Central (promedio del día hábil anterior); el dólar y el euro
+    // de mercado vienen de /api/indicadores
+    { id: 'dolar_obs', clave: 'dolar',   nombre: 'Dólar observado', prefijo: '$ ', decimales: 2 },
+    { id: 'euro',  clave: 'euro',        nombre: 'Euro',  prefijo: '$ ', decimales: 2, respaldo: true },
     { id: 'tpm',   clave: 'tpm',         nombre: 'TPM',   sufijo: '%',   decimales: 2 },
     { id: 'utm',   clave: 'utm',         nombre: 'UTM',   prefijo: '$ ', decimales: 0 },
     // Respaldo: solo se usa si el cobre no viene en indicadores.json
