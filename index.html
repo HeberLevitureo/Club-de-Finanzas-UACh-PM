@@ -237,11 +237,14 @@
 
 <!-- ================= LIGHTBOX ================= -->
 <div id="lightbox" class="hidden fixed inset-0 z-[60] bg-ink-950/80 backdrop-blur-sm items-center justify-center p-6" onclick="closeLightbox()">
-  <div class="bg-white rounded-xl p-8 max-w-sm w-full text-center shadow-2xl">
-    <div id="lightboxInitials" class="mx-auto mb-4 w-20 h-20 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-blue-600 font-bold text-2xl"></div>
-    <h3 id="lightboxNombre" class="text-ink-950 font-bold text-xl"></h3>
-    <p id="lightboxCargo" class="text-blue-600 font-medium text-sm mt-1"></p>
-    <p class="text-slate-500 text-xs mt-6 bg-slate-50 p-2 rounded">Foto corporativa próximamente</p>
+  <div class="bg-white rounded-xl max-w-sm w-full text-center shadow-2xl overflow-hidden">
+    <img id="lightboxFoto" src="" alt="" class="hidden w-full aspect-square object-cover">
+    <div class="p-8">
+      <div id="lightboxInitials" class="mx-auto mb-4 w-20 h-20 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center text-blue-600 font-bold text-2xl"></div>
+      <h3 id="lightboxNombre" class="text-ink-950 font-bold text-xl"></h3>
+      <p id="lightboxCargo" class="text-blue-600 font-medium text-sm mt-1"></p>
+      <p id="lightboxAviso" class="text-slate-500 text-xs mt-6 bg-slate-50 p-2 rounded">Foto corporativa próximamente</p>
+    </div>
   </div>
 </div>
 
@@ -369,12 +372,12 @@ const ACTIVIDADES = [
 ];
 
 const DIRECTIVA = [
-  { nombre: "Enzo Solano", cargo: "Presidente" },
-  { nombre: "Martín Márquez", cargo: "Vicepresidente y Director de Finanzas" },
-  { nombre: "Heber Levitureo", cargo: "Codirector de Comunicación" },
-  { nombre: "Francisca Arriagada", cargo: "Codirectora de Comunicación" },
-  { nombre: "Alonso Letelier", cargo: "Director de Secretaría" },
-  { nombre: "Diego Vargas", cargo: "Director de Vinculación" }
+  { nombre: "Enzo Solano", cargo: "Presidente", foto: "directiva/enzo-solano.jpg" },
+  { nombre: "Martín Márquez", cargo: "Vicepresidente y Director de Finanzas", foto: "directiva/martin-marquez.jpg" },
+  { nombre: "Heber Levitureo", cargo: "Codirector de Comunicación", foto: "directiva/heber-levitureo.jpg" },
+  { nombre: "Francisca Arriagada", cargo: "Codirectora de Comunicación", foto: "directiva/francisca-arriagada.jpg" },
+  { nombre: "Alonso Letelier", cargo: "Director de Secretaría", foto: "directiva/alonso-letelier.jpg" },
+  { nombre: "Diego Vargas", cargo: "Director de Vinculación", foto: "directiva/diego-vargas.jpg" }
 ];
 
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -468,7 +471,14 @@ ACTIVIDADES.forEach((a, i) => {
   timeline.appendChild(el);
 });
 
-function openLightbox(nombre, cargo, initials){
+function openLightbox(nombre, cargo, initials, foto){
+  const tieneFoto = Boolean(foto);
+  const img = document.getElementById('lightboxFoto');
+  img.src = tieneFoto ? foto : '';
+  img.alt = tieneFoto ? nombre : '';
+  img.classList.toggle('hidden', !tieneFoto);
+  document.getElementById('lightboxInitials').classList.toggle('hidden', tieneFoto);
+  document.getElementById('lightboxAviso').classList.toggle('hidden', tieneFoto);
   document.getElementById('lightboxInitials').textContent = initials;
   document.getElementById('lightboxNombre').textContent = nombre;
   document.getElementById('lightboxCargo').textContent = cargo;
@@ -490,11 +500,11 @@ DIRECTIVA.forEach((m, i) => {
   el.className = 'bg-white border border-slate-200 shadow-sm rounded-xl overflow-hidden text-left group transition-all duration-300 hover:shadow-md hover:-translate-y-1';
   el.setAttribute('data-aos', 'fade-up');
   el.setAttribute('data-aos-delay', String((i % 3) * 80));
-  el.onclick = () => openLightbox(m.nombre, m.cargo, initials);
+  el.onclick = () => openLightbox(m.nombre, m.cargo, initials, m.foto);
   el.innerHTML = `
     <div class="w-full aspect-square bg-slate-50 flex items-center justify-center overflow-hidden border-b border-slate-100">
       ${m.foto
-        ? `<img src="${m.foto}" alt="${m.nombre}" class="w-full h-full object-cover">`
+        ? `<img src="${m.foto}" alt="${m.nombre}, ${m.cargo}" width="800" height="800" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">`
         : `<span class="font-mono-num font-bold text-5xl text-slate-300 group-hover:text-blue-600 transition-colors">${initials}</span>`}
     </div>
     <div class="p-6">
