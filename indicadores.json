@@ -1,0 +1,110 @@
+{
+  "actualizado": "2026-10-17T17:05:28.207Z",
+  "items": [
+    {
+      "id": "dolar",
+      "nombre": "Dólar",
+      "decimales": 2,
+      "prefijo": "$ ",
+      "valor": 984.38,
+      "fecha": "2026-10-17T09:58:16.000Z",
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "euro",
+      "nombre": "Euro",
+      "decimales": 2,
+      "prefijo": "$ ",
+      "valor": 1106.82,
+      "fecha": "2026-10-16T21:29:52.000Z",
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "ipsa",
+      "nombre": "MSCI IPSA",
+      "decimales": 2,
+      "valor": 10970.29,
+      "fecha": "2026-10-16T19:10:18.000Z",
+      "variacion": -0.01,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "sp500",
+      "nombre": "S&P 500",
+      "decimales": 2,
+      "valor": 7659.44,
+      "fecha": "2026-10-16T20:42:08.000Z",
+      "variacion": -1.09,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "nasdaq",
+      "nombre": "Nasdaq",
+      "decimales": 2,
+      "valor": 26140.033,
+      "fecha": "2026-10-16T21:15:59.000Z",
+      "variacion": -2.15,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "dow",
+      "nombre": "Dow Jones",
+      "decimales": 2,
+      "valor": 52002.41,
+      "fecha": "2026-10-16T20:42:09.000Z",
+      "variacion": -0.34,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "cobre",
+      "nombre": "Cobre",
+      "decimales": 2,
+      "prefijo": "US$ ",
+      "sufijo": "/lb",
+      "valor": 6.5735,
+      "fecha": "2026-10-16T20:59:33.000Z",
+      "variacion": 0.95,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "wti",
+      "nombre": "Petróleo WTI",
+      "decimales": 2,
+      "prefijo": "US$ ",
+      "valor": 99.02,
+      "fecha": "2026-10-16T20:59:58.000Z",
+      "variacion": 1.07,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "brent",
+      "nombre": "Brent",
+      "decimales": 2,
+      "prefijo": "US$ ",
+      "valor": 109.86,
+      "fecha": "2026-10-16T20:59:31.000Z",
+      "variacion": 3.72,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "oro",
+      "nombre": "Oro",
+      "decimales": 2,
+      "prefijo": "US$ ",
+      "valor": 4181.1,
+      "fecha": "2026-10-16T20:59:59.000Z",
+      "variacion": 0.26,
+      "fuente": "Yahoo Finance"
+    },
+    {
+      "id": "bitcoin",
+      "nombre": "Bitcoin",
+      "decimales": 0,
+      "prefijo": "US$ ",
+      "valor": 81089.07,
+      "fecha": "2026-10-17T17:05:23.000Z",
+      "variacion": -0.51,
+      "fuente": "Yahoo Finance"
+    }
+  ]
+}
