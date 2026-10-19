@@ -10,6 +10,9 @@
   },
   "assets": {
     "directory": ".",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // El Worker revisa todas las visitas antes de servir los archivos estáticos;
+    // así puede redirigir workers.dev y www al dominio oficial.
+    "run_worker_first": true
   }
 }
