@@ -58,9 +58,20 @@ async function indicadores(request, ctx) {
   }
 }
 
+// Dominio oficial del club. Cualquier otra dirección (workers.dev, www) redirige aquí
+// con 301, para que los buscadores indexen un solo sitio y no contenido duplicado.
+const DOMINIO_OFICIAL = 'clubdefinanzasuach.cl';
+
 export default {
   async fetch(request, env, ctx) {
-    const { pathname } = new URL(request.url);
+    const url = new URL(request.url);
+    const { pathname } = url;
+    if (url.hostname.endsWith('.workers.dev') || url.hostname === `www.${DOMINIO_OFICIAL}`) {
+      url.protocol = 'https:';
+      url.hostname = DOMINIO_OFICIAL;
+      url.port = '';
+      return Response.redirect(url.toString(), 301);
+    }
     if (pathname === '/api/indicadores') return indicadores(request, ctx);
     return env.ASSETS.fetch(request);
   },
