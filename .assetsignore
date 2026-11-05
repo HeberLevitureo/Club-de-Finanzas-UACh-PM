@@ -7,3 +7,8 @@ node_modules
 scripts
 worker
 wrangler.jsonc
+package.json
+package-lock.json
+tailwind.config.js
+src
+CLAUDE.md
