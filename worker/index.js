@@ -88,11 +88,32 @@ const CABECERAS_SEGURIDAD = {
 // Las páginas HTML se dejan como las entrega Cloudflare (siempre revalidadas).
 const ESTATICOS = /\.(?:png|jpe?g|webp|avif|svg|ico|css|js|woff2?)$/i;
 
+// URLs siempre con ".html" (es la forma que declaran canonical y sitemap).
+// Cloudflare, por defecto, responde 307 de /pagina.html a /pagina. Para evitarlo, /pagina.html
+// se sirve directo con 200 (pidiendo el archivo por dentro), y /pagina, si es una página
+// del sitio, redirige con 301 a /pagina.html.
 async function servirArchivo(request, env) {
-  const respuesta = await env.ASSETS.fetch(request);
+  const url = new URL(request.url);
+  let solicitud = request;
+  if (url.pathname.endsWith('.html')) {
+    const interna = new URL(url);
+    interna.pathname = url.pathname === '/index.html' ? '/' : url.pathname.slice(0, -'.html'.length);
+    solicitud = new Request(interna, request);
+  } else if (url.pathname !== '/' && !url.pathname.endsWith('/') && !/\.[a-z0-9]+$/i.test(url.pathname)) {
+    const prueba = await env.ASSETS.fetch(request);
+    if (prueba.status === 200 && (prueba.headers.get('content-type') || '').includes('text/html')) {
+      url.pathname += '.html';
+      return Response.redirect(url.toString(), 301);
+    }
+    return agregarCabeceras(prueba);
+  }
+  return agregarCabeceras(await env.ASSETS.fetch(solicitud), url.pathname);
+}
+
+function agregarCabeceras(respuesta, pathname = '') {
   const resultado = new Response(respuesta.body, respuesta); // copia con cabeceras editables
   for (const [nombre, valor] of Object.entries(CABECERAS_SEGURIDAD)) resultado.headers.set(nombre, valor);
-  if (respuesta.status === 200 && ESTATICOS.test(new URL(request.url).pathname)) {
+  if (respuesta.status === 200 && ESTATICOS.test(pathname)) {
     resultado.headers.set('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
   }
   return resultado;
