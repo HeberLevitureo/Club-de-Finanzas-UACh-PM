@@ -62,10 +62,53 @@ async function indicadores(request, ctx) {
 // con 301, para que los buscadores indexen un solo sitio y no contenido duplicado.
 const DOMINIO_OFICIAL = 'clubdefinanzasuach.cl';
 
+// Cabeceras de seguridad para todas las páginas y archivos del sitio.
+// La CSP va en modo "solo reportar" (Report-Only): no bloquea nada, solo avisa en la consola
+// del navegador qué rompería. Cuando no aparezcan avisos, se puede cambiar a Content-Security-Policy.
+const CABECERAS_SEGURIDAD = {
+  'Strict-Transport-Security': 'max-age=15552000',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+  'Content-Security-Policy-Report-Only': [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdn.jsdelivr.net",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
+    "font-src https://fonts.gstatic.com",
+    "img-src 'self' data: https:",
+    "connect-src 'self'",
+    "frame-ancestors 'none'",
+    "base-uri 'self'",
+  ].join('; '),
+};
+
+// Imágenes, CSS y JS cambian poco y sus nombres no llevan versión: un día en el navegador y,
+// pasado ese tiempo, siguen sirviéndose mientras se revalidan en segundo plano.
+// Las páginas HTML se dejan como las entrega Cloudflare (siempre revalidadas).
+const ESTATICOS = /\.(?:png|jpe?g|webp|avif|svg|ico|css|js|woff2?)$/i;
+
+async function servirArchivo(request, env) {
+  const respuesta = await env.ASSETS.fetch(request);
+  const resultado = new Response(respuesta.body, respuesta); // copia con cabeceras editables
+  for (const [nombre, valor] of Object.entries(CABECERAS_SEGURIDAD)) resultado.headers.set(nombre, valor);
+  if (respuesta.status === 200 && ESTATICOS.test(new URL(request.url).pathname)) {
+    resultado.headers.set('Cache-Control', 'public, max-age=86400, stale-while-revalidate=604800');
+  }
+  return resultado;
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const { pathname } = url;
+    // HTTP plano → HTTPS (301), para que nadie navegue el sitio sin cifrado.
+    // (No aplica en desarrollo local: localhost solo habla HTTP.)
+    const esLocal = url.hostname === 'localhost' || url.hostname === '127.0.0.1';
+    if (url.protocol === 'http:' && !esLocal) {
+      url.protocol = 'https:';
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.hostname.endsWith('.workers.dev') || url.hostname === `www.${DOMINIO_OFICIAL}`) {
       url.protocol = 'https:';
       url.hostname = DOMINIO_OFICIAL;
@@ -73,6 +116,6 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
     if (pathname === '/api/indicadores') return indicadores(request, ctx);
-    return env.ASSETS.fetch(request);
+    return servirArchivo(request, env);
   },
 };
