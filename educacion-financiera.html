@@ -4,20 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Educación Financiera - Club de Finanzas UACh</title>
-<meta name="description" content="Educación Financiera del Club de Finanzas UACh: charlas de educación financiera y económica para colegios y liceos del sur de Chile.">
+<meta name="description" content="Área de Educación Financiera del Club de Finanzas UACh: talleres gratuitos de finanzas personales para estudiantes de 3° y 4° medio en colegios y liceos del sur de Chile.">
 <link rel="canonical" href="https://clubdefinanzasuach.cl/educacion-financiera.html">
-<meta property="og:title" content="Educación Financiera">
-<meta property="og:description" content="Educación Financiera del Club de Finanzas UACh: charlas de educación financiera y económica para colegios y liceos del sur de Chile.">
-<meta property="og:image" content="https://clubdefinanzasuach.cl/logo.png">
+<meta property="og:title" content="Educación Financiera · Club de Finanzas UACh">
+<meta property="og:description" content="Área de Educación Financiera del Club de Finanzas UACh: talleres gratuitos de finanzas personales para estudiantes de 3° y 4° medio en colegios y liceos del sur de Chile.">
+<meta property="og:image" content="https://clubdefinanzasuach.cl/nuevo-horizonte-portada.jpg">
 <meta property="og:url" content="https://clubdefinanzasuach.cl/educacion-financiera.html">
-<meta property="og:type" content="article">
+<meta property="og:type" content="website">
 <link rel="icon" href="logo.png">
 
 <!-- Tailwind CDN y Configuración -->
 <link rel="stylesheet" href="tailwind.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .font-mono-num { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
+  section[id] { scroll-margin-top: 88px; }
+</style>
 </head>
 <body class="bg-white text-slate-600 antialiased min-h-screen flex flex-col">
 
@@ -54,28 +60,209 @@
   </div>
 </header>
 
-<main class="flex-grow py-24 flex items-center justify-center">
-  <article class="max-w-2xl mx-auto px-6 text-center">
-    
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-bold text-sm mb-8 shadow-sm">
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-      Próximamente
+<main class="flex-grow">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative overflow-hidden bg-slate-50 border-b border-slate-200">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-100 via-white to-white"></div>
+    <div class="relative max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-sm text-blue-600 font-semibold tracking-wide uppercase mb-5">Área de extensión del club</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-ink-950 leading-[1.08]">Educación Financiera</h1>
+        <p class="mt-6 max-w-lg text-lg text-slate-600 leading-relaxed">
+          Llevamos talleres gratuitos de finanzas personales a estudiantes de 3° y 4° medio, para que lleguen a la vida adulta con herramientas prácticas para decidir sobre su dinero.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="#solicitar" class="inline-flex items-center px-6 py-3 rounded-md bg-ink-900 text-white font-semibold text-sm hover:bg-ink-800 transition-colors shadow-md">Solicitar un taller</a>
+          <a href="#realizados" class="inline-flex items-center px-6 py-3 rounded-md border border-slate-300 text-ink-900 font-semibold text-sm hover:border-ink-900 bg-white transition-colors">Ver talleres realizados</a>
+        </div>
+      </div>
+      <figure>
+        <img src="nuevo-horizonte-portada.jpg" alt="Estudiantes del Colegio Nuevo Horizonte junto a integrantes del Club de Finanzas UACh al cierre del taller de educación financiera" width="1280" height="958" class="w-full aspect-[4/3] object-cover rounded-2xl shadow-xl border border-slate-200">
+        <figcaption class="mt-3 text-xs text-slate-500">Taller en el Colegio Nuevo Horizonte de Puerto Montt, 12 de noviembre de 2026.</figcaption>
+      </figure>
     </div>
-    
-    <h1 class="text-4xl md:text-5xl font-extrabold text-ink-950 leading-tight mb-6">
-      Educación Financiera
-    </h1>
-    
-    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 md:p-12 shadow-sm">
-      <p class="text-lg text-slate-600 leading-relaxed mb-6">
-        Creemos firmemente en el impacto de enseñar desde temprana edad. Pronto habilitaremos este espacio con toda la información sobre nuestras <strong>charlas de educación financiera y económica</strong> dirigidas a colegios y liceos del sur de Chile.
-      </p>
-      <a href="index.html" class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-ink-900 text-white font-semibold text-sm hover:bg-ink-800 transition-colors shadow-md">
-        Regresar al inicio
+  </section>
+
+  <!-- ================= DATOS CLAVE ================= -->
+  <section aria-label="Datos clave de los talleres" class="bg-white border-b border-slate-200">
+    <dl class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6">
+      <div class="flex flex-col-reverse">
+        <dt class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wide">Talleres realizados</dt>
+        <dd class="font-mono-num text-2xl md:text-3xl font-bold text-ink-950">2</dd>
+      </div>
+      <div class="flex flex-col-reverse">
+        <dt class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wide">Público</dt>
+        <dd class="font-mono-num text-2xl md:text-3xl font-bold text-ink-950">3° y 4° medio</dd>
+      </div>
+      <div class="flex flex-col-reverse">
+        <dt class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wide">Por taller</dt>
+        <dd class="font-mono-num text-2xl md:text-3xl font-bold text-ink-950">40–50 min</dd>
+      </div>
+      <div class="flex flex-col-reverse">
+        <dt class="text-xs font-medium text-slate-500 mt-1 uppercase tracking-wide">Para el establecimiento</dt>
+        <dd class="font-mono-num text-2xl md:text-3xl font-bold text-ink-950">Gratuito</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ================= POR QUÉ ================= -->
+  <section id="por-que" class="py-20 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="border-b border-slate-200 pb-6 mb-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Por qué lo hacemos</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-14">
+        <div>
+          <p class="text-slate-600 mb-6 leading-relaxed text-lg">Muchas veces, al día siguiente de licenciarse, los estudiantes se enfrentan a un mundo regido por reglas financieras y contratos para los que rara vez recibieron preparación formal.</p>
+          <p class="text-slate-600 leading-relaxed text-lg">Este proyecto nace para concientizar y prevenir esa problemática. Con cada taller buscamos nivelar la cancha: que el esfuerzo y el talento de cada estudiante se traduzcan, el día de mañana, en estabilidad, autonomía y bienestar a largo plazo.</p>
+        </div>
+        <div class="flex flex-col gap-8">
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Una competencia para la vida</h3>
+            <p class="text-slate-600">La alfabetización económica ya no es un conocimiento opcional ni exclusivo de las carreras afines.</p>
+          </div>
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Prevenir el «efecto arrastre»</h3>
+            <p class="text-slate-600">Los errores de los primeros años de la adultez pueden frenar el desarrollo personal, generar estrés financiero prematuro y limitar las oportunidades de crecimiento.</p>
+          </div>
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Herramientas, no teoría</h3>
+            <p class="text-slate-600">No buscamos impartir clases de economía teórica, sino entregar un «manual de supervivencia y crecimiento» para el mundo real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TALLERES ================= -->
+  <section id="talleres" class="py-20 md:py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-slate-200 pb-6 mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Nuestros talleres</h2>
+        <p class="text-sm font-medium text-slate-500 max-w-sm md:text-right">Dos ejes de introducción a las finanzas personales, adaptables a una sala de clases o laboratorio.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-white border border-slate-200 shadow-sm rounded-xl p-8 flex flex-col">
+          <div class="font-mono-num text-sm font-semibold text-blue-600 mb-3">Taller 01</div>
+          <h3 class="text-xl font-bold text-ink-950 leading-snug">Disciplina presupuestaria y criterios de consumo</h3>
+          <ul class="mt-auto pt-8 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+            <li class="px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200">40–50 minutos</li>
+            <li class="px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200">3° y 4° medio</li>
+            <li class="px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200">Sala o laboratorio</li>
+          </ul>
+        </article>
+
+        <article class="bg-white border border-slate-200 shadow-sm rounded-xl p-8 flex flex-col">
+          <div class="font-mono-num text-sm font-semibold text-blue-600 mb-3">Taller 02</div>
+          <h3 class="text-xl font-bold text-ink-950 leading-snug">¿Para qué ahorramos y cómo lo protegemos?</h3>
+          <p class="mt-5 text-sm font-semibold text-ink-950">Lo que hemos conversado en las aulas</p>
+          <ul class="mt-3 space-y-2 text-slate-600">
+            <li class="flex gap-3"><span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></span>Por qué es importante ahorrar.</li>
+            <li class="flex gap-3"><span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></span>Buenos hábitos financieros.</li>
+            <li class="flex gap-3"><span class="mt-2.5 w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></span>Cómo proteger los ahorros frente a la inflación.</li>
+          </ul>
+          <ul class="mt-auto pt-8 flex flex-wrap gap-2 text-xs font-semibold text-slate-600">
+            <li class="px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200">40–50 minutos</li>
+            <li class="px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200">3° y 4° medio</li>
+            <li class="px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200">Sala o laboratorio</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="mt-8 text-sm text-slate-500 max-w-2xl">El programa se enmarca en las actividades de extensión del Club de Finanzas UACh y se ofrece de manera gratuita a la comunidad escolar. Seguimos diseñando nuevos talleres para entregar herramientas prácticas a los jóvenes.</p>
+    </div>
+  </section>
+
+  <!-- ================= TALLERES REALIZADOS ================= -->
+  <section id="realizados" class="py-20 md:py-24 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap items-baseline justify-between gap-4 border-b border-slate-200 pb-6 mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Talleres realizados</h2>
+        <p class="text-sm font-medium text-slate-500 max-w-xs md:text-right">Cada visita queda registrada con su nota y sus fotos.</p>
+      </div>
+
+      <!-- Para sumar un taller nuevo: copiar un <article> completo, ponerlo primero y actualizar el contador de "Talleres realizados" de más arriba. -->
+      <div class="grid sm:grid-cols-2 gap-8">
+        <article class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow rounded-xl overflow-hidden flex flex-col">
+          <img class="w-full aspect-video object-cover border-b border-slate-100" src="nuevo-horizonte-portada.jpg" alt="Estudiantes del Colegio Nuevo Horizonte junto a integrantes del club al cierre del taller" width="1280" height="958" loading="lazy" decoding="async">
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium tracking-wide">
+              <span class="font-mono-num">12 nov 2026</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+              <span class="text-blue-600 font-bold uppercase">Puerto Montt</span>
+            </div>
+            <h3 class="text-lg font-bold text-ink-950 leading-snug mb-3">Colegio Nuevo Horizonte</h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">Conversamos con los estudiantes sobre la importancia del ahorro, los buenos hábitos financieros y cómo proteger los ahorros frente a la inflación.</p>
+            <a href="educacion-financiera-colegio-nuevo-horizonte-12-nov-2026.html" class="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-slate-50 border border-slate-200 text-ink-900 text-sm font-bold hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-colors">Ver nota completa</a>
+          </div>
+        </article>
+
+        <article class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow rounded-xl overflow-hidden flex flex-col">
+          <img class="w-full aspect-video object-cover object-top border-b border-slate-100" src="liceo-holanda-portada.jpg" alt="Estudiantes del Liceo Holanda junto al roll-up del Club de Finanzas UACh durante el taller" width="1280" height="960" loading="lazy" decoding="async">
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex items-center gap-3 text-xs text-slate-500 mb-3 font-medium tracking-wide">
+              <span class="font-mono-num">4 nov 2026</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+              <span class="text-blue-600 font-bold uppercase">Llanquihue</span>
+            </div>
+            <h3 class="text-lg font-bold text-ink-950 leading-snug mb-3">Liceo Holanda</h3>
+            <p class="text-sm text-slate-600 leading-relaxed flex-1">Nuestro primer taller: por qué es importante ahorrar y cómo proteger los ahorros de la inflación.</p>
+            <a href="educacion-financiera-liceo-holanda-04-nov-2026.html" class="mt-6 inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-slate-50 border border-slate-200 text-ink-900 text-sm font-bold hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-colors">Ver nota completa</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EQUIPO ================= -->
+  <section id="equipo" class="py-20 md:py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="border-b border-slate-200 pb-6 mb-14">
+        <h2 class="text-2xl md:text-3xl font-bold text-ink-950">Quiénes imparten los talleres</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-14">
+        <div>
+          <p class="text-slate-600 leading-relaxed text-lg">Somos un equipo de estudiantes de la Universidad Austral de Chile que cursa carreras afines al área financiera.</p>
+          <ul class="mt-6 flex flex-wrap gap-2 text-sm font-semibold text-ink-900">
+            <li class="px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">Ingeniería Comercial</li>
+            <li class="px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">Ingeniería Civil Industrial</li>
+            <li class="px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">Ingeniería en Información y Control de Gestión</li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-8">
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Preparación</h3>
+            <p class="text-slate-600">Cada integrante completa un proceso formativo antes de impartir estos talleres introductorios de finanzas personales, para entregar siempre un servicio educativo de calidad.</p>
+          </div>
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Trabajo voluntario</h3>
+            <p class="text-slate-600">Todos participan de manera voluntaria en la planificación, preparación y realización de los talleres.</p>
+          </div>
+          <div class="border-l-4 border-blue-600 pl-5">
+            <h3 class="text-ink-950 font-bold text-lg mb-2">Lo que nos mueve</h3>
+            <p class="text-slate-600">Promover la responsabilidad financiera, la toma de decisiones informadas y el empoderamiento económico para el bienestar de nuestra comunidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SOLICITAR (CTA) ================= -->
+  <section id="solicitar" class="py-16 bg-blue-600">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="max-w-xl text-center md:text-left">
+        <h2 class="text-xl md:text-2xl font-bold text-white mb-3">Lleva un taller a tu establecimiento</h2>
+        <p class="text-blue-100 text-sm md:text-base leading-relaxed">Los talleres son gratuitos. Escríbenos a <a href="mailto:clubdefinanzas@uach.cl" class="font-semibold text-white underline underline-offset-2">clubdefinanzas@uach.cl</a> indicando el establecimiento, el curso y las fechas tentativas, y coordinamos la visita.</p>
+      </div>
+      <a href="mailto:clubdefinanzas@uach.cl?subject=Solicitud%20de%20taller%20de%20Educaci%C3%B3n%20Financiera"
+         class="inline-flex items-center justify-center px-8 py-4 rounded-md bg-white text-blue-700 font-bold text-sm md:text-base hover:bg-slate-50 transition-colors whitespace-nowrap shadow-lg">
+        Solicitar un taller
       </a>
     </div>
+  </section>
 
-  </article>
 </main>
 
 <!-- ================= CONTACTO / FOOTER ================= -->
