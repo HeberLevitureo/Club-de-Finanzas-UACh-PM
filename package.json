@@ -1,0 +1,11 @@
+{
+  "name": "club-de-finanzas-uach-pm",
+  "private": true,
+  "description": "Sitio estático del Club de Finanzas UACh. El CSS de Tailwind se compila y se guarda en tailwind.css (se sube al repo, no hace falta compilar al publicar).",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o tailwind.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}
