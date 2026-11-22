@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Radiografía de mis deseos · Juego · Club de Finanzas UACh</title>
+<title>¿Cuánto gastas realmente en deseos? · Club de Finanzas UACh</title>
 <meta name="description" content="Juego de educación financiera del Club de Finanzas UACh: calcula cuánto gastas en deseos cada semana, cuánto suma en un año y compara ahorrar con endeudarte.">
 <link rel="canonical" href="https://clubdefinanzasuach.cl/juego-radiografia-deseos.html">
-<meta property="og:title" content="Radiografía de mis deseos · Club de Finanzas UACh">
+<meta property="og:title" content="¿Cuánto gastas realmente en deseos? · Club de Finanzas UACh">
 <meta property="og:description" content="Calcula cuánto gastas en deseos cada semana, cuánto suma en un año y compara ahorrar con endeudarte.">
-<meta property="og:image" content="https://clubdefinanzasuach.cl/juego-radiografia-portada.jpg">
+<meta property="og:image" content="https://clubdefinanzasuach.cl/juego-deseos-portada.jpg">
 <meta property="og:url" content="https://clubdefinanzasuach.cl/juego-radiografia-deseos.html">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#061226">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Radiografía">
+<meta name="apple-mobile-web-app-title" content="Deseos">
 <link rel="icon" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +45,11 @@ header{position:relative;padding-top:calc(.8rem + env(safe-area-inset-top,0px));
 .fs:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
 .fs svg{width:1.15rem;height:1.15rem;flex:none}
 .fs[hidden]{display:none}
+.hl{display:flex;align-items:center;gap:.8rem}
+.bk{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px;min-width:44px;padding:.4rem .9rem .4rem .7rem;border-radius:999px;border:1px solid var(--edge);background:var(--glass);color:var(--ink);font-weight:700;font-size:.82rem;text-decoration:none;backdrop-filter:blur(10px);transition:background .15s}
+.bk:hover{background:var(--glass2)}
+.bk:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+.bk svg{width:1.15rem;height:1.15rem;flex:none}
 .fs .off,.fs[aria-pressed=true] .on{display:none}.fs[aria-pressed=true] .off{display:block}
 header .in{display:flex;justify-content:space-between;align-items:center;gap:.6rem 1.2rem;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:.8rem}
@@ -187,7 +192,7 @@ header .in{flex-wrap:nowrap}
 .prog{padding:.2rem;gap:.2rem;flex-wrap:nowrap}
 .prog li{font-size:.78rem;padding:.2rem .55rem .2rem .2rem;white-space:nowrap}
 .prog li{font-size:0!important;padding:.2rem!important;gap:0}
-.fs{padding:.4rem;font-size:0;gap:0}.hr{gap:.35rem}
+.fs{padding:.4rem;font-size:0;gap:0}.hr{gap:.35rem}.bk{padding:.4rem;font-size:0;gap:0}.hl{gap:.5rem}
 .prog li span{font-size:.8rem;width:1.5rem;height:1.5rem;flex:none}
 .nav{flex-wrap:nowrap}.nav .sum{flex:1;min-width:0;line-height:1.2}.nav .sum .tot{display:block}.nav button{white-space:nowrap}.hm{display:none}.go{font-size:1rem}.nav .go{flex:none}.nav .back{flex:none;padding:.5rem .8rem}
 main{padding-bottom:6.5rem}
@@ -226,6 +231,7 @@ details[open]{max-height:40vh;overflow:auto}
 }
 @media(min-width:600px) and (max-width:820px){.items{grid-template-columns:repeat(2,minmax(0,1fr))}.tiles{grid-template-columns:repeat(6,minmax(0,1fr))}.gl{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.nav details{display:none}#s1 .nav .go{flex:1}#s2 .nav .reset{flex:1}}
+@media(max-width:440px){.brand>div:last-child{display:none}}
 @media(max-width:400px){.nav .back{font-size:0;min-width:48px}.nav .back::before{content:"←";font-size:1.3rem}.nav .go{font-size:.95rem;padding:.6rem .8rem}.brand span{display:none}.hero h1{font-size:1.6rem}.it{grid-template-columns:5.4rem minmax(0,1fr)}.pic{width:5.4rem}}
 @media(prefers-reduced-motion:reduce){.stage{animation:none}.seg,.it{transition:none}}
 </style>
@@ -389,7 +395,10 @@ details[open]{max-height:40vh;overflow:auto}
 </svg>
 
 <header class="px"><div class="in">
+  <div class="hl">
+  <a class="bk" href="educacion-financiera.html#juegos" aria-label="Volver al sitio del club"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Volver</a>
   <div class="brand"><div class="logo" role="img" aria-label="Logo Club de Finanzas UACh"></div><div><b>CLUB DE FINANZAS UACH</b><span>Voluntariado Educación Financiera</span></div></div>
+</div>
   <div class="hr">
   <button class="fs" id="fs" type="button" aria-pressed="false" aria-label="Pantalla completa" hidden><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg><span class="fst">Pantalla completa</span></button>
   <ol class="prog" id="prog"><li><span>1</span>Mis gastos</li><li><span>2</span>Mi resultado</li><li><span>3</span>Mi meta</li></ol>
